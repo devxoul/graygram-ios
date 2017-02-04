@@ -12,9 +12,11 @@
 		03E16E721E464B4F0061E685 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E16E701E464B4F0061E685 /* Main.storyboard */; };
 		03E16E741E464B4F0061E685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E16E731E464B4F0061E685 /* Assets.xcassets */; };
 		03E16E771E464B4F0061E685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E16E751E464B4F0061E685 /* LaunchScreen.storyboard */; };
+		B2BB90D47274097853FE19A6 /* Pods_Graygram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Graygram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E16E691E464B4F0061E685 /* Graygram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graygram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E16E6C1E464B4F0061E685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03E16E6E1E464B4F0061E685 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		03E16E731E464B4F0061E685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03E16E761E464B4F0061E685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03E16E781E464B4F0061E685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2615165B4186F1C5887786B7 /* Pods-Graygram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Graygram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Graygram/Pods-Graygram.debug.xcconfig"; sourceTree = "<group>"; };
+		4024640E30E4004B5C157283 /* Pods-Graygram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Graygram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Graygram/Pods-Graygram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2BB90D47274097853FE19A6 /* Pods_Graygram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				03E16E6B1E464B4F0061E685 /* Graygram */,
 				03E16E6A1E464B4F0061E685 /* Products */,
+				C2D91E842FC6BBFCDA09073F /* Pods */,
+				5801614013E8E797AEB2EA9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Graygram;
 			sourceTree = "<group>";
 		};
+		5801614013E8E797AEB2EA9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2D91E842FC6BBFCDA09073F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2615165B4186F1C5887786B7 /* Pods-Graygram.debug.xcconfig */,
+				4024640E30E4004B5C157283 /* Pods-Graygram.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03E16E7B1E464B4F0061E685 /* Build configuration list for PBXNativeTarget "Graygram" */;
 			buildPhases = (
+				54723380949CD43304704F13 /* [CP] Check Pods Manifest.lock */,
 				03E16E651E464B4F0061E685 /* Sources */,
 				03E16E661E464B4F0061E685 /* Frameworks */,
 				03E16E671E464B4F0061E685 /* Resources */,
+				C37CB7442BF4442EA72A091D /* [CP] Embed Pods Frameworks */,
+				D0EF80A3BB0D18B7DB301F1F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		54723380949CD43304704F13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C37CB7442BF4442EA72A091D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Graygram/Pods-Graygram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0EF80A3BB0D18B7DB301F1F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Graygram/Pods-Graygram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		03E16E651E464B4F0061E685 /* Sources */ = {
@@ -256,6 +331,7 @@
 		};
 		03E16E7C1E464B4F0061E685 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2615165B4186F1C5887786B7 /* Pods-Graygram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Graygram/Info.plist;
@@ -268,6 +344,7 @@
 		};
 		03E16E7D1E464B4F0061E685 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4024640E30E4004B5C157283 /* Pods-Graygram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Graygram/Info.plist;
