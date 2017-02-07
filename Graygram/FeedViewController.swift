@@ -17,6 +17,8 @@ class FeedViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.collectionView.frame = self.view.bounds
+    self.view.addSubview(self.collectionView)
     self.fetchPosts()
   }
 
