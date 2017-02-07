@@ -17,6 +17,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.collectionView.backgroundColor = .white
     self.collectionView.frame = self.view.bounds
     self.collectionView.dataSource = self
     self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cardCell")
@@ -49,6 +50,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath)
+    cell.backgroundColor = .lightGray
     return cell
   }
 
