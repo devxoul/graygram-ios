@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FeedViewController.swift
 //  Graygram
 //
 //  Created by Suyeol Jeon on 05/02/2017.
@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class FeedViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()

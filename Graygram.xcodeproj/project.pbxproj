@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03E16E6D1E464B4F0061E685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E16E6C1E464B4F0061E685 /* AppDelegate.swift */; };
-		03E16E6F1E464B4F0061E685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E16E6E1E464B4F0061E685 /* ViewController.swift */; };
+		03E16E6F1E464B4F0061E685 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E16E6E1E464B4F0061E685 /* FeedViewController.swift */; };
 		03E16E741E464B4F0061E685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E16E731E464B4F0061E685 /* Assets.xcassets */; };
 		03E16E771E464B4F0061E685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E16E751E464B4F0061E685 /* LaunchScreen.storyboard */; };
 		B2BB90D47274097853FE19A6 /* Pods_Graygram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */; };
@@ -18,7 +18,7 @@
 		002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Graygram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E16E691E464B4F0061E685 /* Graygram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graygram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E16E6C1E464B4F0061E685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03E16E6E1E464B4F0061E685 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03E16E6E1E464B4F0061E685 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		03E16E731E464B4F0061E685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03E16E761E464B4F0061E685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03E16E781E464B4F0061E685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				03E16E6C1E464B4F0061E685 /* AppDelegate.swift */,
-				03E16E6E1E464B4F0061E685 /* ViewController.swift */,
+				03E16E6E1E464B4F0061E685 /* FeedViewController.swift */,
 				03E16E731E464B4F0061E685 /* Assets.xcassets */,
 				03E16E751E464B4F0061E685 /* LaunchScreen.storyboard */,
 				03E16E781E464B4F0061E685 /* Info.plist */,
@@ -207,7 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03E16E6F1E464B4F0061E685 /* ViewController.swift in Sources */,
+				03E16E6F1E464B4F0061E685 /* FeedViewController.swift in Sources */,
 				03E16E6D1E464B4F0061E685 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
