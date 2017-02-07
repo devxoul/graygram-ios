@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UICollectionViewDataSource {
 
   var posts: [Post] = []
 
@@ -18,6 +18,7 @@ class FeedViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.collectionView.frame = self.view.bounds
+    self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cardCell")
     self.view.addSubview(self.collectionView)
     self.fetchPosts()
   }
@@ -36,6 +37,17 @@ class FeedViewController: UIViewController {
         print(error)
       }
     }
+  }
+
+  // MARK: UICollectionViewDataSource
+
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return self.posts.count
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath)
+    return cell
   }
 
 }
