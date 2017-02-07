@@ -11,6 +11,8 @@ import Alamofire
 
 class FeedViewController: UIViewController {
 
+  var posts: [Post] = []
+
   override func viewDidLoad() {
     super.viewDidLoad()
     self.fetchPosts()
@@ -22,7 +24,9 @@ class FeedViewController: UIViewController {
     Alamofire.request("https://api.graygram.com/feed").responseJSON { response in
       switch response.result {
       case .success(let value):
-        print(value)
+        guard let json = value as? [String: Any] else { return }
+        let postsJSONArray = json["data"] as? [[String: Any]] ?? []
+        self.posts = [Post](JSONArray: postsJSONArray) ?? []
 
       case .failure(let error):
         print(error)
