@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window.backgroundColor = .white
     window.makeKeyAndVisible()
 
-    window.rootViewController = FeedViewController()
+    let feedViewController = FeedViewController()
+    let navigationController = UINavigationController(rootViewController: feedViewController)
+    window.rootViewController = navigationController
 
     self.window = window
     return true
