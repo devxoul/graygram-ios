@@ -33,6 +33,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource {
         guard let json = value as? [String: Any] else { return }
         let postsJSONArray = json["data"] as? [[String: Any]] ?? []
         self.posts = [Post](JSONArray: postsJSONArray) ?? []
+        self.collectionView.reloadData()
 
       case .failure(let error):
         print(error)
