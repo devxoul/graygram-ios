@@ -13,6 +13,21 @@ class FeedViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.fetchPosts()
+  }
+
+  // MARK: Networking
+
+  fileprivate func fetchPosts() {
+    Alamofire.request("https://api.graygram.com/feed").responseJSON { response in
+      switch response.result {
+      case .success(let value):
+        print(value)
+
+      case .failure(let error):
+        print(error)
+      }
+    }
   }
 
 }
