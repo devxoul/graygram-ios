@@ -11,6 +11,7 @@
 		03E16E6F1E464B4F0061E685 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E16E6E1E464B4F0061E685 /* FeedViewController.swift */; };
 		03E16E741E464B4F0061E685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E16E731E464B4F0061E685 /* Assets.xcassets */; };
 		03E16E771E464B4F0061E685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03E16E751E464B4F0061E685 /* LaunchScreen.storyboard */; };
+		03FC6F9D1E4A433100BE7B72 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC6F9C1E4A433100BE7B72 /* Post.swift */; };
 		B2BB90D47274097853FE19A6 /* Pods_Graygram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,7 @@
 		03E16E731E464B4F0061E685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03E16E761E464B4F0061E685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03E16E781E464B4F0061E685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03FC6F9C1E4A433100BE7B72 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2615165B4186F1C5887786B7 /* Pods-Graygram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Graygram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Graygram/Pods-Graygram.debug.xcconfig"; sourceTree = "<group>"; };
 		4024640E30E4004B5C157283 /* Pods-Graygram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Graygram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Graygram/Pods-Graygram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +63,7 @@
 			children = (
 				03E16E6C1E464B4F0061E685 /* AppDelegate.swift */,
 				03E16E6E1E464B4F0061E685 /* FeedViewController.swift */,
+				03FC6F9C1E4A433100BE7B72 /* Post.swift */,
 				03E16E731E464B4F0061E685 /* Assets.xcassets */,
 				03E16E751E464B4F0061E685 /* LaunchScreen.storyboard */,
 				03E16E781E464B4F0061E685 /* Info.plist */,
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FC6F9D1E4A433100BE7B72 /* Post.swift in Sources */,
 				03E16E6F1E464B4F0061E685 /* FeedViewController.swift in Sources */,
 				03E16E6D1E464B4F0061E685 /* AppDelegate.swift in Sources */,
 			);
