@@ -6,4 +6,7 @@ target 'Graygram' do
   # Networking
   pod 'Alamofire', '~> 4.3'
 
+  # Model
+  pod 'ObjectMapper', '~> 2.2'
+
 end
