@@ -18,6 +18,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.collectionView.frame = self.view.bounds
+    self.collectionView.dataSource = self
     self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cardCell")
     self.view.addSubview(self.collectionView)
     self.fetchPosts()
