@@ -13,6 +13,8 @@ class FeedViewController: UIViewController {
 
   var posts: [Post] = []
 
+  let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+
   override func viewDidLoad() {
     super.viewDidLoad()
     self.fetchPosts()
