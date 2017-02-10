@@ -10,8 +10,11 @@ import UIKit
 
 final class PostCardCell: UICollectionViewCell {
 
+  fileprivate let messageLabel = UILabel()
+
   override init(frame: CGRect) {
     super.init(frame: frame)
+    self.contentView.addSubview(self.messageLabel)
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -20,7 +23,7 @@ final class PostCardCell: UICollectionViewCell {
 
   func configure(post: Post) {
     self.backgroundColor = .lightGray
-    print(post)
+    self.messageLabel.text = post.message
   }
 
 }
