@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class FeedViewController: UIViewController, UICollectionViewDataSource {
+class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
   var posts: [Post] = []
 
@@ -20,6 +20,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource {
     self.collectionView.backgroundColor = .white
     self.collectionView.frame = self.view.bounds
     self.collectionView.dataSource = self
+    self.collectionView.delegate = self
     self.collectionView.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
     self.view.addSubview(self.collectionView)
     self.fetchPosts()
@@ -52,6 +53,13 @@ class FeedViewController: UIViewController, UICollectionViewDataSource {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! PostCardCell
     cell.configure(post: self.posts[indexPath.item])
     return cell
+  }
+
+  // MARK: UICollectionViewDelegateFlowLayout
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let cellWidth = collectionView.frame.width
+    return CGSize(width: cellWidth, height: cellWidth) // 일단 정사각형
   }
 
 }
