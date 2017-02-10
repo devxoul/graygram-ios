@@ -14,6 +14,7 @@ final class PostCardCell: UICollectionViewCell {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+    self.messageLabel.numberOfLines = 3
     self.contentView.addSubview(self.messageLabel)
   }
   
@@ -29,6 +30,7 @@ final class PostCardCell: UICollectionViewCell {
 
   override func layoutSubviews() {
     super.layoutSubviews()
+    self.messageLabel.frame.size.width = self.contentView.frame.width
     self.messageLabel.sizeToFit()
   }
 
