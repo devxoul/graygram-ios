@@ -24,6 +24,7 @@ final class PostCardCell: UICollectionViewCell {
   func configure(post: Post) {
     self.backgroundColor = .lightGray
     self.messageLabel.text = post.message
+    self.setNeedsLayout()
   }
 
   override func layoutSubviews() {
