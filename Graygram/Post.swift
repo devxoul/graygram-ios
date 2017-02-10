@@ -11,6 +11,7 @@ import ObjectMapper
 struct Post: Mappable {
 
   var id: Int!
+  var photoID: String!
   var message: String?
   var createdAt: Date!
 
@@ -19,6 +20,7 @@ struct Post: Mappable {
 
   mutating func mapping(map: Map) {
     self.id <- map["id"]
+    self.photoID <- map["photo.id"]
     self.message <- map["message"]
     self.createdAt <- (map["created_at"], ISO8601DateTransform())
   }
