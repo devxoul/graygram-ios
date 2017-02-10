@@ -20,7 +20,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource {
     self.collectionView.backgroundColor = .white
     self.collectionView.frame = self.view.bounds
     self.collectionView.dataSource = self
-    self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cardCell")
+    self.collectionView.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
     self.view.addSubview(self.collectionView)
     self.fetchPosts()
   }
