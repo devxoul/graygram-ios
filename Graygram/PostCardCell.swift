@@ -26,4 +26,9 @@ final class PostCardCell: UICollectionViewCell {
     self.messageLabel.text = post.message
   }
 
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    self.messageLabel.sizeToFit()
+  }
+
 }
