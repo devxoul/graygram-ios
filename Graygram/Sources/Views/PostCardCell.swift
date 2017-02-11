@@ -28,7 +28,6 @@ final class PostCardCell: UICollectionViewCell {
     static let messageLabelTop = 10.f
     static let messageLabelLeft = 10.f
     static let messageLabelRight = 10.f
-    static let messageLabelBottom = 10.f
   }
 
   fileprivate struct Font {
@@ -99,7 +98,6 @@ final class PostCardCell: UICollectionViewCell {
       )
       height += Metric.messageLabelTop
       height += messageLabelSize.height // messageLabel height
-      height += Metric.messageLabelBottom
     }
     return CGSize(width: width, height: height)
   }
