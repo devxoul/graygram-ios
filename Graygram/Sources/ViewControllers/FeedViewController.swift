@@ -13,15 +13,16 @@ class FeedViewController: UIViewController {
 
   var posts: [Post] = []
 
-  let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+  let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+    $0.backgroundColor = .white
+    $0.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.collectionView.backgroundColor = .white
     self.collectionView.frame = self.view.bounds
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
-    self.collectionView.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
     self.view.addSubview(self.collectionView)
     self.fetchPosts()
   }
