@@ -59,7 +59,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let cellWidth = collectionView.frame.width
-    return CGSize(width: cellWidth, height: cellWidth + 100)
+    return PostCardCell.size(width: cellWidth, post: self.posts[indexPath.item])
   }
 
 }

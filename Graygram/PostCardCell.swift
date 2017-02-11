@@ -41,6 +41,10 @@ final class PostCardCell: UICollectionViewCell {
     self.setNeedsLayout()
   }
 
+  class func size(width: CGFloat, post: Post) -> CGSize {
+    return CGSize(width: width, height: width + 100)
+  }
+
   override func layoutSubviews() {
     super.layoutSubviews()
 
