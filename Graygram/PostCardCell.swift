@@ -24,6 +24,10 @@ final class PostCardCell: UICollectionViewCell {
     static let messageLabelBottom = 10.f
   }
 
+  fileprivate struct Font {
+    static let messageLabel = UIFont.systemFont(ofSize: 14)
+  }
+
   fileprivate let photoView = UIImageView()
   fileprivate let messageLabel = UILabel()
 
@@ -32,7 +36,7 @@ final class PostCardCell: UICollectionViewCell {
 
     self.photoView.backgroundColor = .gray
     self.messageLabel.numberOfLines = Constant.messageLabelNumberOfLines
-    self.messageLabel.font = UIFont.systemFont(ofSize: 14)
+    self.messageLabel.font = Font.messageLabel
 
     self.contentView.addSubview(self.photoView)
     self.contentView.addSubview(self.messageLabel)
@@ -58,10 +62,9 @@ final class PostCardCell: UICollectionViewCell {
     height += width // photoView height
 
     if let message = post.message, !message.isEmpty {
-      let font = UIFont.systemFont(ofSize: 14)
       let messageLabelSize = message.size(
         width: width - Metric.messageLabelLeft - Metric.messageLabelRight,
-        font: font,
+        font: Font.messageLabel,
         numberOfLines: Constant.messageLabelNumberOfLines
       )
       height += Metric.messageLabelTop
