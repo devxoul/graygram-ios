@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class FeedViewController: UIViewController {
 
   var posts: [Post] = []
 
@@ -42,8 +42,11 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
       }
     }
   }
+}
 
-  // MARK: UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
+
+extension FeedViewController: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return self.posts.count
@@ -55,7 +58,12 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     return cell
   }
 
-  // MARK: UICollectionViewDelegateFlowLayout
+}
+
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension FeedViewController: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let cellWidth = collectionView.frame.width
