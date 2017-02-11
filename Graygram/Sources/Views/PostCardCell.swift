@@ -51,6 +51,8 @@ final class PostCardCell: UICollectionViewCell {
     super.init(frame: frame)
 
     self.userPhotoView.backgroundColor = .gray
+    self.userPhotoView.layer.cornerRadius = Metric.userPhotoViewSize / 2
+    self.userPhotoView.clipsToBounds = true
     self.usernameLabel.font = Font.usernameLabel
     self.photoView.backgroundColor = .gray
     self.messageLabel.numberOfLines = Constant.messageLabelNumberOfLines
