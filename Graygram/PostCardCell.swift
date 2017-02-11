@@ -20,6 +20,7 @@ final class PostCardCell: UICollectionViewCell {
 
     self.photoView.backgroundColor = .gray
     self.messageLabel.numberOfLines = 3
+    self.messageLabel.font = UIFont.systemFont(ofSize: 14)
 
     self.contentView.addSubview(self.photoView)
     self.contentView.addSubview(self.messageLabel)
