@@ -17,6 +17,12 @@ final class PostCardCell: UICollectionViewCell {
   }
 
   fileprivate struct Metric {
+    static let userPhotoViewLeft = 10.f
+    static let userPhotoViewSize = 30.f
+
+    static let usernameLabelLeft = 8.f
+    static let usernameLabelRight = 10.f
+
     static let messageLabelTop = 10.f
     static let messageLabelLeft = 10.f
     static let messageLabelRight = 10.f
@@ -24,12 +30,15 @@ final class PostCardCell: UICollectionViewCell {
   }
 
   fileprivate struct Font {
+    static let usernameLabel = UIFont.boldSystemFont(ofSize: 13)
     static let messageLabel = UIFont.systemFont(ofSize: 14)
   }
 
 
   // MARK: UI
 
+  fileprivate let userPhotoView = UIImageView()
+  fileprivate let usernameLabel = UILabel()
   fileprivate let photoView = UIImageView()
   fileprivate let messageLabel = UILabel()
 
@@ -39,10 +48,14 @@ final class PostCardCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
+    self.userPhotoView.backgroundColor = .gray
+    self.usernameLabel.font = Font.usernameLabel
     self.photoView.backgroundColor = .gray
     self.messageLabel.numberOfLines = Constant.messageLabelNumberOfLines
     self.messageLabel.font = Font.messageLabel
 
+    self.contentView.addSubview(self.userPhotoView)
+    self.contentView.addSubview(self.usernameLabel)
     self.contentView.addSubview(self.photoView)
     self.contentView.addSubview(self.messageLabel)
   }
