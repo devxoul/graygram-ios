@@ -11,9 +11,9 @@ import Alamofire
 
 final class FeedViewController: UIViewController {
 
-  var posts: [Post] = []
+  fileprivate var posts: [Post] = []
 
-  let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+  fileprivate let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
     $0.backgroundColor = .white
     $0.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
   }
