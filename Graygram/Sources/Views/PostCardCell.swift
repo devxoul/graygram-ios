@@ -39,25 +39,27 @@ final class PostCardCell: UICollectionViewCell {
 
   // MARK: UI
 
-  fileprivate let userPhotoView = UIImageView()
-  fileprivate let usernameLabel = UILabel()
-  fileprivate let photoView = UIImageView()
-  fileprivate let messageLabel = UILabel()
+  fileprivate let userPhotoView = UIImageView().then {
+    $0.backgroundColor = .gray
+    $0.layer.cornerRadius = Metric.userPhotoViewSize / 2
+    $0.clipsToBounds = true
+  }
+  fileprivate let usernameLabel = UILabel().then {
+    $0.font = Font.usernameLabel
+  }
+  fileprivate let photoView = UIImageView().then {
+    $0.backgroundColor = .gray
+  }
+  fileprivate let messageLabel = UILabel().then {
+    $0.numberOfLines = Constant.messageLabelNumberOfLines
+    $0.font = Font.messageLabel
+  }
 
 
   // MARK: Initializing
 
   override init(frame: CGRect) {
     super.init(frame: frame)
-
-    self.userPhotoView.backgroundColor = .gray
-    self.userPhotoView.layer.cornerRadius = Metric.userPhotoViewSize / 2
-    self.userPhotoView.clipsToBounds = true
-    self.usernameLabel.font = Font.usernameLabel
-    self.photoView.backgroundColor = .gray
-    self.messageLabel.numberOfLines = Constant.messageLabelNumberOfLines
-    self.messageLabel.font = Font.messageLabel
-
     self.contentView.addSubview(self.userPhotoView)
     self.contentView.addSubview(self.usernameLabel)
     self.contentView.addSubview(self.photoView)
