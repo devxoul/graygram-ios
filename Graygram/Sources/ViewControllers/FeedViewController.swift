@@ -44,6 +44,8 @@ final class FeedViewController: UIViewController {
 
   fileprivate func fetchPosts() {
     Alamofire.request("https://api.graygram.com/feed").responseJSON { response in
+      self.refreshControl.endRefreshing()
+
       switch response.result {
       case .success(let value):
         guard let json = value as? [String: Any] else { return }
