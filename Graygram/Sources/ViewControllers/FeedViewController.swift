@@ -33,6 +33,8 @@ final class FeedViewController: UIViewController {
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
 
+    self.refreshControl.addTarget(self, action: #selector(self.refreshControlDidChangeValue), for: .valueChanged)
+
     self.collectionView.addSubview(self.refreshControl)
     self.view.addSubview(self.collectionView)
     self.fetchPosts()
@@ -54,6 +56,14 @@ final class FeedViewController: UIViewController {
       }
     }
   }
+
+
+  // MARK: Actions
+
+  fileprivate dynamic func refreshControlDidChangeValue() {
+    print("will start refrehing")
+  }
+
 }
 
 
