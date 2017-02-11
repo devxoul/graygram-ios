@@ -18,6 +18,7 @@ final class FeedViewController: UIViewController {
 
   // MARK: UI
 
+  fileprivate let refreshControl = UIRefreshControl()
   fileprivate let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
     $0.backgroundColor = .white
     $0.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
@@ -31,6 +32,8 @@ final class FeedViewController: UIViewController {
     self.collectionView.frame = self.view.bounds
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
+
+    self.collectionView.addSubview(self.refreshControl)
     self.view.addSubview(self.collectionView)
     self.fetchPosts()
   }
