@@ -42,7 +42,25 @@ final class PostCardCell: UICollectionViewCell {
   }
 
   class func size(width: CGFloat, post: Post) -> CGSize {
-    return CGSize(width: width, height: width + 100)
+    var height: CGFloat = 0
+    height += width // photoView height
+
+    if let message = post.message, !message.isEmpty {
+      let font = UIFont.systemFont(ofSize: 14)
+      let constraintSize = CGSize(width: width - 20, height: font.lineHeight * 3)
+      let options: NSStringDrawingOptions = [.usesFontLeading, .usesLineFragmentOrigin]
+      let attributes: [String: Any] = [NSFontAttributeName: font]
+      let boundingRect = message.boundingRect(
+        with: constraintSize,
+        options: options,
+        attributes: attributes,
+        context: nil
+      )
+      height += 10 // messageLabel top
+      height += boundingRect.height // messageLabel height
+      height += 10 // messageLabel bottom
+    }
+    return CGSize(width: width, height: height)
   }
 
   override func layoutSubviews() {
