@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class PostCardCell: UICollectionViewCell {
 
@@ -29,7 +30,11 @@ final class PostCardCell: UICollectionViewCell {
 
   func configure(post: Post) {
     self.backgroundColor = .lightGray
-    // TODO: photoView 이미지 설정
+
+    if let id = post.photoID, let url = URL(string: "https://graygram.com/photos/\(id)/640x640") {
+      self.photoView.kf.setImage(with: url)
+    }
+
     self.messageLabel.text = post.message
     self.setNeedsLayout()
   }
