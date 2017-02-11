@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		03723B211E4F924900B07514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03723B161E4F924900B07514 /* Assets.xcassets */; };
 		03723B221E4F924900B07514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03723B171E4F924900B07514 /* LaunchScreen.storyboard */; };
-		03723B281E4F924900B07514 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03723B201E4F924900B07514 /* Info.plist */; };
 		03723B331E4F928700B07514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B2A1E4F928700B07514 /* AppDelegate.swift */; };
 		03723B341E4F928700B07514 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B2C1E4F928700B07514 /* Post.swift */; };
 		03723B351E4F928700B07514 /* String+BoundingRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B2E1E4F928700B07514 /* String+BoundingRect.swift */; };
@@ -215,7 +214,6 @@
 			files = (
 				03723B211E4F924900B07514 /* Assets.xcassets in Resources */,
 				03723B221E4F924900B07514 /* LaunchScreen.storyboard in Resources */,
-				03723B281E4F924900B07514 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
