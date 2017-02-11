@@ -11,6 +11,7 @@ import UIKit
 import CGFloatLiteral
 import Kingfisher
 import ManualLayout
+import Then
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
