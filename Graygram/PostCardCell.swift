@@ -47,17 +47,9 @@ final class PostCardCell: UICollectionViewCell {
 
     if let message = post.message, !message.isEmpty {
       let font = UIFont.systemFont(ofSize: 14)
-      let constraintSize = CGSize(width: width - 20, height: font.lineHeight * 3)
-      let options: NSStringDrawingOptions = [.usesFontLeading, .usesLineFragmentOrigin]
-      let attributes: [String: Any] = [NSFontAttributeName: font]
-      let boundingRect = message.boundingRect(
-        with: constraintSize,
-        options: options,
-        attributes: attributes,
-        context: nil
-      )
+      let messageLabelSize = message.size(width: width - 20, font: font, numberOfLines: 3)
       height += 10 // messageLabel top
-      height += ceil(boundingRect.height) // messageLabel height
+      height += messageLabelSize.height // messageLabel height
       height += 10 // messageLabel bottom
     }
     return CGSize(width: width, height: height)

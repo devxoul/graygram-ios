@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03BD9CD51E4F7A05002CCAC8 /* String+BoundingRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BD9CD41E4F7A05002CCAC8 /* String+BoundingRect.swift */; };
 		03E16E6D1E464B4F0061E685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E16E6C1E464B4F0061E685 /* AppDelegate.swift */; };
 		03E16E6F1E464B4F0061E685 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E16E6E1E464B4F0061E685 /* FeedViewController.swift */; };
 		03E16E741E464B4F0061E685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03E16E731E464B4F0061E685 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Graygram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03BD9CD41E4F7A05002CCAC8 /* String+BoundingRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BoundingRect.swift"; sourceTree = "<group>"; };
 		03E16E691E464B4F0061E685 /* Graygram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graygram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E16E6C1E464B4F0061E685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03E16E6E1E464B4F0061E685 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				03E16E6E1E464B4F0061E685 /* FeedViewController.swift */,
 				03FC6F9C1E4A433100BE7B72 /* Post.swift */,
 				03FC6F9E1E4A5BD200BE7B72 /* PostCardCell.swift */,
+				03BD9CD41E4F7A05002CCAC8 /* String+BoundingRect.swift */,
 				03E16E731E464B4F0061E685 /* Assets.xcassets */,
 				03E16E751E464B4F0061E685 /* LaunchScreen.storyboard */,
 				03E16E781E464B4F0061E685 /* Info.plist */,
@@ -215,6 +218,7 @@
 			files = (
 				03FC6F9D1E4A433100BE7B72 /* Post.swift in Sources */,
 				03FC6F9F1E4A5BD200BE7B72 /* PostCardCell.swift in Sources */,
+				03BD9CD51E4F7A05002CCAC8 /* String+BoundingRect.swift in Sources */,
 				03E16E6F1E464B4F0061E685 /* FeedViewController.swift in Sources */,
 				03E16E6D1E464B4F0061E685 /* AppDelegate.swift in Sources */,
 			);
