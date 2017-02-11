@@ -91,6 +91,8 @@ final class PostCardCell: UICollectionViewCell {
 
   class func size(width: CGFloat, post: Post) -> CGSize {
     var height: CGFloat = 0
+    height += Metric.userPhotoViewSize
+    height += Metric.photoViewTop
     height += width // photoView height
 
     if let message = post.message, !message.isEmpty {
