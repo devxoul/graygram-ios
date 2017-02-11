@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class FeedViewController: UIViewController {
+final class FeedViewController: UIViewController {
 
   var posts: [Post] = []
 
