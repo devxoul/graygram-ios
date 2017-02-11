@@ -392,7 +392,7 @@
 			baseConfigurationReference = 2615165B4186F1C5887786B7 /* Pods-Graygram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Graygram/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Graygram/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.Graygram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,7 +405,7 @@
 			baseConfigurationReference = 4024640E30E4004B5C157283 /* Pods-Graygram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Graygram/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Graygram/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.Graygram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
