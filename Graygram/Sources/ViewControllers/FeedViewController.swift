@@ -43,7 +43,8 @@ final class FeedViewController: UIViewController {
   // MARK: Networking
 
   fileprivate func fetchPosts() {
-    Alamofire.request("https://api.graygram.com/feed").responseJSON { response in
+    Alamofire.request("https://api.graygram.com/feed").responseJSON { [weak self] response in
+      guard let `self` = self else { return }
       self.refreshControl.endRefreshing()
 
       switch response.result {
