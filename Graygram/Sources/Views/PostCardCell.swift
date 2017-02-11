@@ -23,6 +23,8 @@ final class PostCardCell: UICollectionViewCell {
     static let usernameLabelLeft = 8.f
     static let usernameLabelRight = 10.f
 
+    static let photoViewTop = 10.f
+
     static let messageLabelTop = 10.f
     static let messageLabelLeft = 10.f
     static let messageLabelRight = 10.f
@@ -110,6 +112,19 @@ final class PostCardCell: UICollectionViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
 
+    self.userPhotoView.left = Metric.userPhotoViewLeft
+    self.userPhotoView.width = Metric.userPhotoViewSize
+    self.userPhotoView.height = Metric.userPhotoViewSize
+
+    self.usernameLabel.sizeToFit()
+    self.usernameLabel.left = self.userPhotoView.right + Metric.usernameLabelLeft
+    self.usernameLabel.width = min(
+      self.usernameLabel.width,
+      self.contentView.width - self.usernameLabel.left - Metric.usernameLabelRight
+    )
+    self.usernameLabel.centerY = self.userPhotoView.centerY
+
+    self.photoView.top = self.userPhotoView.bottom + Metric.photoViewTop
     self.photoView.width = self.contentView.width
     self.photoView.height = self.photoView.width
 
