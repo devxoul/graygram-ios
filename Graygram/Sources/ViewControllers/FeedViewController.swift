@@ -61,7 +61,7 @@ final class FeedViewController: UIViewController {
   // MARK: Actions
 
   fileprivate dynamic func refreshControlDidChangeValue() {
-    print("will start refrehing")
+    self.fetchPosts()
   }
 
 }
