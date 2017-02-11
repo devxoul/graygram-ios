@@ -14,6 +14,7 @@
 		03723B351E4F928700B07514 /* String+BoundingRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B2E1E4F928700B07514 /* String+BoundingRect.swift */; };
 		03723B361E4F928700B07514 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B301E4F928700B07514 /* FeedViewController.swift */; };
 		03723B371E4F928700B07514 /* PostCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B321E4F928700B07514 /* PostCardCell.swift */; };
+		03723B391E4F969000B07514 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B381E4F969000B07514 /* User.swift */; };
 		B2BB90D47274097853FE19A6 /* Pods_Graygram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		03723B2E1E4F928700B07514 /* String+BoundingRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+BoundingRect.swift"; sourceTree = "<group>"; };
 		03723B301E4F928700B07514 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		03723B321E4F928700B07514 /* PostCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCardCell.swift; sourceTree = "<group>"; };
+		03723B381E4F969000B07514 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		03E16E691E464B4F0061E685 /* Graygram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graygram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2615165B4186F1C5887786B7 /* Pods-Graygram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Graygram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Graygram/Pods-Graygram.debug.xcconfig"; sourceTree = "<group>"; };
 		4024640E30E4004B5C157283 /* Pods-Graygram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Graygram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Graygram/Pods-Graygram.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		03723B2B1E4F928700B07514 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				03723B381E4F969000B07514 /* User.swift */,
 				03723B2C1E4F928700B07514 /* Post.swift */,
 			);
 			path = Models;
@@ -274,6 +277,7 @@
 			files = (
 				03723B331E4F928700B07514 /* AppDelegate.swift in Sources */,
 				03723B371E4F928700B07514 /* PostCardCell.swift in Sources */,
+				03723B391E4F969000B07514 /* User.swift in Sources */,
 				03723B351E4F928700B07514 /* String+BoundingRect.swift in Sources */,
 				03723B361E4F928700B07514 /* FeedViewController.swift in Sources */,
 				03723B341E4F928700B07514 /* Post.swift in Sources */,
