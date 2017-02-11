@@ -11,12 +11,20 @@ import Alamofire
 
 final class FeedViewController: UIViewController {
 
+  // MARK: Properties
+
   fileprivate var posts: [Post] = []
+
+
+  // MARK: UI
 
   fileprivate let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
     $0.backgroundColor = .white
     $0.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
   }
+
+
+  // MARK: View Life Cycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -44,6 +52,7 @@ final class FeedViewController: UIViewController {
     }
   }
 }
+
 
 // MARK: - UICollectionViewDataSource
 
