@@ -10,4 +10,7 @@ target 'Graygram' do
   # Model
   pod 'ObjectMapper', '~> 2.2'
 
+  # UI
+  pod 'ManualLayout', '~> 1.3'
+
 end
