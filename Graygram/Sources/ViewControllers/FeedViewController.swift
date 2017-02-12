@@ -14,6 +14,7 @@ final class FeedViewController: UIViewController {
   // MARK: Properties
 
   fileprivate var posts: [Post] = []
+  fileprivate var nextURLString: String?
 
 
   // MARK: UI
