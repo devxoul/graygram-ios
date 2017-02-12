@@ -53,6 +53,10 @@ final class FeedViewController: UIViewController {
         guard let json = value as? [String: Any] else { return }
         let postsJSONArray = json["data"] as? [[String: Any]] ?? []
         self.posts = [Post](JSONArray: postsJSONArray) ?? []
+
+        let paging = json["paging"] as? [String: Any]
+        self.nextURLString = paging?["next"] as? String
+
         self.collectionView.reloadData()
 
       case .failure(let error):
