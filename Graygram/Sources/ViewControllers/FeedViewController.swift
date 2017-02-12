@@ -98,7 +98,7 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let contentOffsetBottom = scrollView.contentOffset.y + scrollView.height
-    if contentOffsetBottom >= scrollView.contentSize.height - 300 {
+    if scrollView.contentSize.height > 0 && contentOffsetBottom >= scrollView.contentSize.height - 300 {
       print("Load more")
     }
   }
