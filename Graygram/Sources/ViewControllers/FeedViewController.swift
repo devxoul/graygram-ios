@@ -43,8 +43,18 @@ final class FeedViewController: UIViewController {
 
   // MARK: Networking
 
-  fileprivate func fetchPosts() {
-    Alamofire.request("https://api.graygram.com/feed?limit=10").responseJSON { [weak self] response in
+  fileprivate func fetchPosts(more: Bool = false) {
+    let urlString: String
+
+    if !more {
+      urlString = "https://api.graygram.com/feed?limit=10"
+    } else if let nextURLString = self.nextURLString {
+      urlString = nextURLString
+    } else {
+      return
+    }
+
+    Alamofire.request(urlString).responseJSON { [weak self] response in
       guard let `self` = self else { return }
       self.refreshControl.endRefreshing()
 
@@ -52,7 +62,13 @@ final class FeedViewController: UIViewController {
       case .success(let value):
         guard let json = value as? [String: Any] else { return }
         let postsJSONArray = json["data"] as? [[String: Any]] ?? []
-        self.posts = [Post](JSONArray: postsJSONArray) ?? []
+        let newPosts = [Post](JSONArray: postsJSONArray) ?? []
+
+        if !more {
+          self.posts = newPosts
+        } else {
+          self.posts.append(contentsOf: newPosts)
+        }
 
         let paging = json["paging"] as? [String: Any]
         self.nextURLString = paging?["next"] as? String
@@ -104,7 +120,7 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let contentOffsetBottom = scrollView.contentOffset.y + scrollView.height
     if scrollView.contentSize.height > 0 && contentOffsetBottom >= scrollView.contentSize.height - 300 {
-      print("Load more")
+      self.fetchPosts(more: true)
     }
   }
 
