@@ -96,4 +96,11 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     return PostCardCell.size(width: cellWidth, post: self.posts[indexPath.item])
   }
 
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let contentOffsetBottom = scrollView.contentOffset.y + scrollView.height
+    if contentOffsetBottom >= scrollView.contentSize.height {
+      print("Reached bottom!")
+    }
+  }
+
 }
