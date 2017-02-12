@@ -15,6 +15,7 @@ final class FeedViewController: UIViewController {
 
   fileprivate var posts: [Post] = []
   fileprivate var nextURLString: String?
+  fileprivate var isLoading: Bool = false
 
 
   // MARK: UI
@@ -44,8 +45,9 @@ final class FeedViewController: UIViewController {
   // MARK: Networking
 
   fileprivate func fetchPosts(more: Bool = false) {
-    let urlString: String
+    guard !self.isLoading else { return }
 
+    let urlString: String
     if !more {
       urlString = "https://api.graygram.com/feed?limit=10"
     } else if let nextURLString = self.nextURLString {
@@ -54,9 +56,12 @@ final class FeedViewController: UIViewController {
       return
     }
 
+    self.isLoading = true
+
     Alamofire.request(urlString).responseJSON { [weak self] response in
       guard let `self` = self else { return }
       self.refreshControl.endRefreshing()
+      self.isLoading = false
 
       switch response.result {
       case .success(let value):
