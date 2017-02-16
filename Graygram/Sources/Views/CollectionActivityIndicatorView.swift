@@ -10,9 +10,11 @@ import UIKit
 
 final class CollectionActivityIndicatorView: UICollectionReusableView {
 
+  fileprivate let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+
   override init(frame: CGRect) {
     super.init(frame: frame)
-    self.backgroundColor = .blue
+    self.addSubview(self.activityIndicatorView)
   }
 
   required init?(coder aDecoder: NSCoder) {
