@@ -115,6 +115,19 @@ extension FeedViewController: UICollectionViewDataSource {
     return cell
   }
 
+  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    let isLastSection = indexPath.section == collectionView.numberOfSections - 1
+    let isFooter = kind == UICollectionElementKindSectionFooter
+    if isLastSection && isFooter {
+      return collectionView.dequeueReusableSupplementaryView(
+        ofKind: kind,
+        withReuseIdentifier: "activityIndicatorView",
+        for: indexPath
+      )
+    }
+    return UICollectionReusableView()
+  }
+
 }
 
 
