@@ -22,4 +22,10 @@ final class CollectionActivityIndicatorView: UICollectionReusableView {
     fatalError("init(coder:) has not been implemented")
   }
 
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    self.activityIndicatorView.centerX = self.width / 2
+    self.activityIndicatorView.centerY = self.height / 2
+  }
+
 }
