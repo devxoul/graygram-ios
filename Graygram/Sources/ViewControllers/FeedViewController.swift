@@ -34,6 +34,11 @@ final class FeedViewController: UIViewController {
     self.collectionView.frame = self.view.bounds
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
+    self.collectionView.register(
+      CollectionActivityIndicatorView.self,
+      forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
+      withReuseIdentifier: "activityIndicatorView"
+    )
 
     self.refreshControl.addTarget(self, action: #selector(self.refreshControlDidChangeValue), for: .valueChanged)
 
