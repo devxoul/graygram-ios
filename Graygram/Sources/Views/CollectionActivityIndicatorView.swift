@@ -14,6 +14,7 @@ final class CollectionActivityIndicatorView: UICollectionReusableView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+    self.activityIndicatorView.startAnimating()
     self.addSubview(self.activityIndicatorView)
   }
 
