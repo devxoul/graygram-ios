@@ -140,6 +140,10 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     return PostCardCell.size(width: cellWidth, post: self.posts[indexPath.item])
   }
 
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+  }
+
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let contentOffsetBottom = scrollView.contentOffset.y + scrollView.height
     if scrollView.contentSize.height > 0 && contentOffsetBottom >= scrollView.contentSize.height - 300 {
