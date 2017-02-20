@@ -31,7 +31,6 @@ final class FeedViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.collectionView.frame = self.view.bounds
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
     self.collectionView.register(
@@ -44,6 +43,11 @@ final class FeedViewController: UIViewController {
 
     self.collectionView.addSubview(self.refreshControl)
     self.view.addSubview(self.collectionView)
+
+    self.collectionView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+
     self.fetchPosts()
   }
 

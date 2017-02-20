@@ -11,6 +11,7 @@ import UIKit
 import CGFloatLiteral
 import Kingfisher
 import ManualLayout
+import SnapKit
 import Then
 
 @UIApplicationMain
