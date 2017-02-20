@@ -30,8 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window.backgroundColor = .white
     window.makeKeyAndVisible()
 
-    let loginViewController = LoginViewController()
-    let navigationController = UINavigationController(rootViewController: loginViewController)
+    let splashViewController = SplashViewController()
+    let navigationController = UINavigationController(rootViewController: splashViewController)
     window.rootViewController = navigationController
 
     self.window = window
