@@ -166,6 +166,10 @@ final class PostCardCell: UICollectionViewCell {
     self.likeButton.left = Metric.likeButtonLeft
     self.likeButton.width = Metric.likeButtonSize
     self.likeButton.height = Metric.likeButtonSize
+
+    self.likeCountLabel.sizeToFit()
+    self.likeCountLabel.left = self.likeButton.right + Metric.likeCountLabelLeft
+    self.likeCountLabel.centerY = self.likeButton.centerY
   }
 
 }
