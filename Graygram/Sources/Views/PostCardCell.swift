@@ -211,6 +211,31 @@ final class PostCardCell: UICollectionViewCell {
     }
   }
 
+  func unlike() {
+    guard let post = self.post, let postID = post.id else { return }
+    self.likeButton.isSelected = false
+    self.post?.likeCount = max(0, post.likeCount - 1)
+    self.configureLikeCountLabel()
+
+    let urlString = "https://api.graygram.com/posts/\(postID)"
+    let headers: HTTPHeaders = [
+      "Accept": "application/json"
+    ]
+    Alamofire.request(urlString, method: .post, headers: headers).responseData { response in
+      switch response.result {
+      case .success,
+           .failure where response.response?.statusCode != 409:
+        print("post-\(postID) 좋아요 취소 성공!")
+
+      case .failure:
+        print("post-\(postID) 좋아요 취소 실패 ㅠㅠ")
+        self.likeButton.isSelected = true
+        self.post?.likeCount = post.likeCount
+        self.configureLikeCountLabel()
+      }
+    }
+  }
+
 
   // MARK: Actions
 
