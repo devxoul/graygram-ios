@@ -31,6 +31,13 @@ final class FeedViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    self.navigationItem.titleView = UILabel().then {
+      $0.font = UIFont(name: "IowanOldStyle-BoldItalic", size: 20)
+      $0.text = "Graygram"
+      $0.sizeToFit()
+    }
+
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
     self.collectionView.register(
