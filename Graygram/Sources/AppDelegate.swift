@@ -38,6 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
 
+  func presentLoginSreen() {
+    let loginViewController = LoginViewController()
+    let navigationController = UINavigationController(rootViewController: loginViewController)
+    self.window?.rootViewController = navigationController
+  }
+
   func presentMainSreen() {
     let feedViewController = FeedViewController()
     let navigationController = UINavigationController(rootViewController: feedViewController)
