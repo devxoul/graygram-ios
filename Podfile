@@ -12,6 +12,7 @@ target 'Graygram' do
 
   # UI
   pod 'ManualLayout', '~> 1.3'
+  pod 'SnapKit', '~> 3.2'
 
   # Misc.
   pod 'CGFloatLiteral'
