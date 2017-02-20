@@ -39,7 +39,7 @@ final class PostCardCell: UICollectionViewCell {
   fileprivate struct Font {
     static let usernameLabel = UIFont.boldSystemFont(ofSize: 13)
     static let likeCountLabel = UIFont.boldSystemFont(ofSize: 12)
-    static let messageLabel = UIFont.systemFont(ofSize: 14)
+    static let messageLabel = UIFont.systemFont(ofSize: 13)
   }
 
 
