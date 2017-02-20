@@ -73,6 +73,11 @@ final class LoginViewController: UIViewController {
     guard let username = self.usernameTextField.text, !username.isEmpty else { return }
     guard let password = self.passwordTextField.text, !password.isEmpty else { return }
 
+    self.usernameTextField.isEnabled = false
+    self.passwordTextField.isEnabled = false
+    self.loginButton.isEnabled = false
+    self.loginButton.alpha = 0.4
+
     let urlString = "https://api.graygram.com/login/username"
     let parameters: [String: Any] = [
       "username": username,
@@ -88,8 +93,14 @@ final class LoginViewController: UIViewController {
         switch response.result {
         case .success(let value):
           print("로그인 성공!", value)
+
         case .failure(let error):
           print("로그인 실패 ㅠㅠ", error)
+
+          self.usernameTextField.isEnabled = true
+          self.passwordTextField.isEnabled = true
+          self.loginButton.isEnabled = true
+          self.loginButton.alpha = 1
 
           switch response.errorInfo()?.field {
           case .some("username"):
