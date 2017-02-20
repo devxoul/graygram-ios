@@ -22,6 +22,12 @@ final class LoginViewController: UIViewController {
     $0.placeholder = "Password"
     $0.font = UIFont.systemFont(ofSize: 14)
   }
+  fileprivate let loginButton = UIButton().then {
+    $0.backgroundColor = $0.tintColor
+    $0.layer.cornerRadius = 5
+    $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+    $0.setTitle("Login", for: .normal)
+  }
 
 
   // MARK: View Life Cycle
@@ -32,6 +38,7 @@ final class LoginViewController: UIViewController {
 
     self.view.addSubview(self.usernameTextField)
     self.view.addSubview(self.passwordTextField)
+    self.view.addSubview(self.loginButton)
 
     self.usernameTextField.snp.makeConstraints { make in
       make.top.equalTo(self.topLayoutGuide.snp.bottom).offset(15)
@@ -43,6 +50,12 @@ final class LoginViewController: UIViewController {
     self.passwordTextField.snp.makeConstraints { make in
       make.top.equalTo(self.usernameTextField.snp.bottom).offset(15)
       make.left.right.height.equalTo(self.usernameTextField)
+    }
+
+    self.loginButton.snp.makeConstraints { make in
+      make.top.equalTo(self.passwordTextField.snp.bottom).offset(15)
+      make.left.right.equalTo(self.usernameTextField)
+      make.height.equalTo(40)
     }
   }
 
