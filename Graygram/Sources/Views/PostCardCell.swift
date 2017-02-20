@@ -105,14 +105,19 @@ final class PostCardCell: UICollectionViewCell {
     self.usernameLabel.text = post.user.username
     self.photoView.setImage(with: post.photoID, size: .hd)
     self.likeButton.isSelected = post.isLiked
-    if post.likeCount > 0 {
-      self.likeCountLabel.text = "\(post.likeCount!)명이 좋아합니다."
-    } else {
-      self.likeCountLabel.text = "가장 먼저 좋아요를 눌러보세요."
-    }
+    self.configureLikeCountLabel()
     self.messageLabel.text = post.message
     self.messageLabel.isHidden = post.message?.isEmpty != false
     self.setNeedsLayout()
+  }
+
+  fileprivate func configureLikeCountLabel() {
+    guard let likeCount = self.post?.likeCount else { return }
+    if likeCount > 0 {
+      self.likeCountLabel.text = "\(likeCount)명이 좋아합니다."
+    } else {
+      self.likeCountLabel.text = "가장 먼저 좋아요를 눌러보세요."
+    }
   }
 
 
