@@ -32,3 +32,12 @@ struct Post: Mappable {
   }
 
 }
+
+
+extension Notification.Name {
+  /// 좋아요를 할 경우 발생하는 노티피케이션입니다. `userInfo`에 `postID`가 전달됩니다.
+  static var postDidLike: Notification.Name { return .init("postDidLike") }
+
+  /// 좋아요를 취소할 경우 발생하는 노티피케이션입니다. `userInfo`에 `postID`가 전달됩니다.
+  static var postDidUnlike: Notification.Name { return .init("postDidUnlike") }
+}
