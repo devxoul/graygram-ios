@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window.backgroundColor = .white
     window.makeKeyAndVisible()
 
-    let feedViewController = FeedViewController()
-    let navigationController = UINavigationController(rootViewController: feedViewController)
+    let loginViewController = LoginViewController()
+    let navigationController = UINavigationController(rootViewController: loginViewController)
     window.rootViewController = navigationController
 
     self.window = window
