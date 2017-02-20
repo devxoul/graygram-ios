@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030E75F41E585FB60027D94A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E75F31E585FB60027D94A /* LoginViewController.swift */; };
 		03723B211E4F924900B07514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03723B161E4F924900B07514 /* Assets.xcassets */; };
 		03723B221E4F924900B07514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03723B171E4F924900B07514 /* LaunchScreen.storyboard */; };
 		03723B331E4F928700B07514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B2A1E4F928700B07514 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Graygram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		030E75F31E585FB60027D94A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		03723B161E4F924900B07514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03723B181E4F924900B07514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03723B201E4F924900B07514 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		03723B2F1E4F928700B07514 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				030E75F31E585FB60027D94A /* LoginViewController.swift */,
 				03723B301E4F928700B07514 /* FeedViewController.swift */,
 			);
 			path = ViewControllers;
@@ -300,6 +303,7 @@
 				03723B391E4F969000B07514 /* User.swift in Sources */,
 				03723B351E4F928700B07514 /* String+BoundingRect.swift in Sources */,
 				03723B361E4F928700B07514 /* FeedViewController.swift in Sources */,
+				030E75F41E585FB60027D94A /* LoginViewController.swift in Sources */,
 				03723B341E4F928700B07514 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
