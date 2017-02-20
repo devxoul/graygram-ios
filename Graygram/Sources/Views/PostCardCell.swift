@@ -28,6 +28,10 @@ final class PostCardCell: UICollectionViewCell {
     static let messageLabelTop = 10.f
     static let messageLabelLeft = 10.f
     static let messageLabelRight = 10.f
+
+    static let likeButtonTop = 10.f
+    static let likeButtonLeft = 10.f
+    static let likeButtonSize = 20.f
   }
 
   fileprivate struct Font {
@@ -84,6 +88,7 @@ final class PostCardCell: UICollectionViewCell {
     self.usernameLabel.text = post.user.username
     self.photoView.setImage(with: post.photoID, size: .hd)
     self.messageLabel.text = post.message
+    self.messageLabel.isHidden = post.message?.isEmpty != false
     self.likeButton.isSelected = post.isLiked
     self.setNeedsLayout()
   }
@@ -106,6 +111,9 @@ final class PostCardCell: UICollectionViewCell {
       height += Metric.messageLabelTop
       height += messageLabelSize.height // messageLabel height
     }
+
+    height += Metric.likeButtonTop
+    height += Metric.likeButtonSize
     return CGSize(width: width, height: height)
   }
 
@@ -131,10 +139,21 @@ final class PostCardCell: UICollectionViewCell {
     self.photoView.width = self.contentView.width
     self.photoView.height = self.photoView.width
 
-    self.messageLabel.top = self.photoView.bottom + Metric.messageLabelTop
-    self.messageLabel.left = Metric.messageLabelLeft
-    self.messageLabel.width = self.contentView.width - Metric.messageLabelLeft - Metric.messageLabelRight
-    self.messageLabel.sizeToFit()
+    if !self.messageLabel.isHidden {
+      self.messageLabel.top = self.photoView.bottom + Metric.messageLabelTop
+      self.messageLabel.left = Metric.messageLabelLeft
+      self.messageLabel.width = self.contentView.width - Metric.messageLabelLeft - Metric.messageLabelRight
+      self.messageLabel.sizeToFit()
+    }
+
+    if !self.messageLabel.isHidden {
+      self.likeButton.top = self.messageLabel.bottom + Metric.likeButtonTop
+    } else {
+      self.likeButton.top = self.photoView.bottom + Metric.likeButtonTop
+    }
+    self.likeButton.left = Metric.likeButtonLeft
+    self.likeButton.width = Metric.likeButtonSize
+    self.likeButton.height = Metric.likeButtonSize
   }
 
 }
