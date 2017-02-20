@@ -84,6 +84,7 @@ final class PostCardCell: UICollectionViewCell {
     self.usernameLabel.text = post.user.username
     self.photoView.setImage(with: post.photoID, size: .hd)
     self.messageLabel.text = post.message
+    self.likeButton.isSelected = post.isLiked
     self.setNeedsLayout()
   }
 
