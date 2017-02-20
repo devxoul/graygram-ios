@@ -17,6 +17,8 @@ final class LoginViewController: UIViewController {
   fileprivate let usernameTextField = UITextField().then {
     $0.borderStyle = .roundedRect
     $0.placeholder = "Username"
+    $0.autocorrectionType = .no
+    $0.autocapitalizationType = .none
     $0.font = UIFont.systemFont(ofSize: 14)
   }
   fileprivate let passwordTextField = UITextField().then {
