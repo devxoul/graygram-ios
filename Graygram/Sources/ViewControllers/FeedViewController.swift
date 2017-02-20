@@ -41,6 +41,9 @@ final class FeedViewController: UIViewController {
 
     self.refreshControl.addTarget(self, action: #selector(self.refreshControlDidChangeValue), for: .valueChanged)
 
+    NotificationCenter.default.addObserver(self, selector: #selector(postDidLike), name: .postDidLike, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(postDidUnlike), name: .postDidUnlike, object: nil)
+
     self.collectionView.addSubview(self.refreshControl)
     self.view.addSubview(self.collectionView)
 
@@ -100,6 +103,35 @@ final class FeedViewController: UIViewController {
 
   fileprivate dynamic func refreshControlDidChangeValue() {
     self.fetchPosts()
+  }
+
+
+  // MARK: Notifications
+
+  func postDidLike(_ notification: Notification) {
+    guard let postID = notification.userInfo?["postID"] as? Int else { return }
+    for (i, var post) in self.posts.enumerated() {
+      if post.id == postID {
+        post.likeCount! += 1
+        post.isLiked = true
+        self.posts[i] = post
+        self.collectionView.reloadData()
+        break
+      }
+    }
+  }
+
+  func postDidUnlike(_ notification: Notification) {
+    guard let postID = notification.userInfo?["postID"] as? Int else { return }
+    for (i, var post) in self.posts.enumerated() {
+      if post.id == postID {
+        post.likeCount! = max(0, post.likeCount! - 1)
+        post.isLiked = false
+        self.posts[i] = post
+        self.collectionView.reloadData()
+        break
+      }
+    }
   }
 
 }
