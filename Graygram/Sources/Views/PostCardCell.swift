@@ -240,7 +240,11 @@ final class PostCardCell: UICollectionViewCell {
   // MARK: Actions
 
   func likeButtonDidTap() {
-    self.like()
+    if !self.likeButton.isSelected {
+      self.like()
+    } else {
+      self.unlike()
+    }
   }
 
 }
