@@ -16,6 +16,7 @@ struct Post: Mappable {
   var message: String?
   var createdAt: Date!
   var isLiked: Bool!
+  var likeCount: Int!
 
   init?(map: Map) {
   }
@@ -27,6 +28,7 @@ struct Post: Mappable {
     self.message <- map["message"]
     self.createdAt <- (map["created_at"], ISO8601DateTransform())
     self.isLiked <- map["is_liked"]
+    self.likeCount <- map["like_count"]
   }
 
 }
