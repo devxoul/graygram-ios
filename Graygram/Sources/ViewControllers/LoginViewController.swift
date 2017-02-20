@@ -42,13 +42,13 @@ final class LoginViewController: UIViewController {
 
     self.usernameTextField.snp.makeConstraints { make in
       make.top.equalTo(self.topLayoutGuide.snp.bottom).offset(15)
-      make.left.equalTo(15)
-      make.right.equalTo(-15)
-      make.height.equalTo(30)
+      make.left.equalTo(30)
+      make.right.equalTo(-30)
+      make.height.equalTo(35)
     }
 
     self.passwordTextField.snp.makeConstraints { make in
-      make.top.equalTo(self.usernameTextField.snp.bottom).offset(15)
+      make.top.equalTo(self.usernameTextField.snp.bottom).offset(10)
       make.left.right.height.equalTo(self.usernameTextField)
     }
 
