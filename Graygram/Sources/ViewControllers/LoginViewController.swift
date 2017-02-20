@@ -90,8 +90,18 @@ final class LoginViewController: UIViewController {
           print("로그인 성공!", value)
         case .failure(let error):
           print("로그인 실패 ㅠㅠ", error)
-          if let data = response.data, let json = try? JSONSerialization.jsonObject(with: data) {
-            print(json)
+          if let data = response.data,
+            let json = (try? JSONSerialization.jsonObject(with: data)) as? [String: Any],
+            let error = json["error"] as? [String: Any],
+            let field = error["field"] as? String {
+            switch field {
+            case "username":
+              self.usernameTextField.becomeFirstResponder()
+            case "password":
+              self.passwordTextField.becomeFirstResponder()
+            default:
+              break
+            }
           }
         }
       }
