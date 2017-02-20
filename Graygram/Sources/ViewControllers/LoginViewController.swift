@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Alamofire
+
 final class LoginViewController: UIViewController {
 
   // MARK: UI
@@ -36,6 +38,8 @@ final class LoginViewController: UIViewController {
     super.viewDidLoad()
     self.title = "Login"
 
+    self.loginButton.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
+
     self.view.addSubview(self.usernameTextField)
     self.view.addSubview(self.passwordTextField)
     self.view.addSubview(self.loginButton)
@@ -57,6 +61,33 @@ final class LoginViewController: UIViewController {
       make.left.right.equalTo(self.usernameTextField)
       make.height.equalTo(40)
     }
+  }
+
+
+  // MARK: Actions
+
+  func loginButtonDidTap() {
+    guard let username = self.usernameTextField.text, !username.isEmpty else { return }
+    guard let password = self.passwordTextField.text, !password.isEmpty else { return }
+
+    let urlString = "https://api.graygram.com/login/username"
+    let parameters: [String: Any] = [
+      "username": username,
+      "password": password,
+    ]
+    let headers: HTTPHeaders = [
+      "Accept": "application/json",
+    ]
+    Alamofire
+      .request(urlString, method: .post, parameters: parameters, headers: headers)
+      .responseJSON { response in
+        switch response.result {
+        case .success(let value):
+          print("로그인 성공!", value)
+        case .failure(let error):
+          print("로그인 실패 ㅠㅠ", error)
+        }
+      }
   }
 
 }
