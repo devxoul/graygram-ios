@@ -32,11 +32,14 @@ final class PostCardCell: UICollectionViewCell {
     static let likeButtonTop = 10.f
     static let likeButtonLeft = 10.f
     static let likeButtonSize = 20.f
+
+    static let likeCountLabelLeft = 6.f
   }
 
   fileprivate struct Font {
     static let usernameLabel = UIFont.boldSystemFont(ofSize: 13)
     static let messageLabel = UIFont.systemFont(ofSize: 14)
+    static let likeCountLabel = UIFont.boldSystemFont(ofSize: 12)
   }
 
 
@@ -62,6 +65,9 @@ final class PostCardCell: UICollectionViewCell {
     $0.setBackgroundImage(#imageLiteral(resourceName: "icon_like"), for: .normal)
     $0.setBackgroundImage(#imageLiteral(resourceName: "icon_like_selected"), for: .selected)
   }
+  fileprivate let likeCountLabel = UILabel().then {
+    $0.font = Font.likeCountLabel
+  }
 
 
   // MARK: Initializing
@@ -73,6 +79,7 @@ final class PostCardCell: UICollectionViewCell {
     self.contentView.addSubview(self.photoView)
     self.contentView.addSubview(self.messageLabel)
     self.contentView.addSubview(self.likeButton)
+    self.contentView.addSubview(self.likeCountLabel)
   }
   
   required init?(coder aDecoder: NSCoder) {
