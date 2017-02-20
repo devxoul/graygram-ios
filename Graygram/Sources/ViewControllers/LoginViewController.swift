@@ -99,6 +99,7 @@ final class LoginViewController: UIViewController {
         switch response.result {
         case .success(let value):
           print("로그인 성공!", value)
+          AppDelegate.instance?.presentMainSreen()
 
         case .failure(let error):
           print("로그인 실패 ㅠㅠ", error)
