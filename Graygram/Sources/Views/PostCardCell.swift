@@ -46,7 +46,6 @@ final class PostCardCell: UICollectionViewCell {
   // MARK: UI
 
   fileprivate let userPhotoView = UIImageView().then {
-    $0.backgroundColor = .gray
     $0.layer.cornerRadius = Metric.userPhotoViewSize / 2
     $0.clipsToBounds = true
   }
@@ -54,7 +53,7 @@ final class PostCardCell: UICollectionViewCell {
     $0.font = Font.usernameLabel
   }
   fileprivate let photoView = UIImageView().then {
-    $0.backgroundColor = .gray
+    $0.backgroundColor = .lightGray
   }
   fileprivate let messageLabel = UILabel().then {
     $0.numberOfLines = Constant.messageLabelNumberOfLines
@@ -90,7 +89,6 @@ final class PostCardCell: UICollectionViewCell {
   // MARK: Configuring
 
   func configure(post: Post) {
-    self.backgroundColor = .lightGray
     self.userPhotoView.setImage(with: post.user.photoID, size: .tiny)
     self.usernameLabel.text = post.user.username
     self.photoView.setImage(with: post.photoID, size: .hd)
