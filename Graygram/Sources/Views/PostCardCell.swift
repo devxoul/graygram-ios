@@ -197,6 +197,8 @@ final class PostCardCell: UICollectionViewCell {
       case .success:
         print("post-\(postID) 좋아요 성공!")
         self.likeButton.isSelected = true
+        self.post?.likeCount? += 1
+        self.configureLikeCountLabel()
 
       case .failure:
         print("post-\(postID) 좋아요 실패 ㅠㅠ")
