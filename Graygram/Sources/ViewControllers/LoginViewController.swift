@@ -10,4 +10,35 @@ import UIKit
 
 final class LoginViewController: UIViewController {
 
+  // MARK: UI
+
+  fileprivate let usernameTextField = UITextField().then {
+    $0.borderStyle = .roundedRect
+  }
+  fileprivate let passwordTextField = UITextField().then {
+    $0.borderStyle = .roundedRect
+  }
+
+
+  // MARK: View Life Cycle
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    self.view.addSubview(self.usernameTextField)
+    self.view.addSubview(self.passwordTextField)
+
+    self.usernameTextField.snp.makeConstraints { make in
+      make.top.equalTo(self.topLayoutGuide.snp.bottom).offset(15)
+      make.left.equalTo(15)
+      make.right.equalTo(-15)
+      make.height.equalTo(30)
+    }
+
+    self.passwordTextField.snp.makeConstraints { make in
+      make.top.equalTo(self.usernameTextField.snp.bottom).offset(15)
+      make.left.right.height.equalTo(self.usernameTextField)
+    }
+  }
+
 }
