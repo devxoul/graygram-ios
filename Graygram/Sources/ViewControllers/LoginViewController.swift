@@ -105,8 +105,10 @@ final class LoginViewController: UIViewController {
           switch response.errorInfo()?.field {
           case .some("username"):
             self.usernameTextField.becomeFirstResponder()
+            self.usernameTextField.backgroundColor = UIColor.red.withAlphaComponent(0.5)
           case .some("password"):
             self.passwordTextField.becomeFirstResponder()
+            self.passwordTextField.backgroundColor = UIColor.red.withAlphaComponent(0.5)
           default:
             break
           }
