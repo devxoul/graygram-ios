@@ -80,12 +80,16 @@ final class LoginViewController: UIViewController {
     ]
     Alamofire
       .request(urlString, method: .post, parameters: parameters, headers: headers)
+      .validate(statusCode: 200..<400)
       .responseJSON { response in
         switch response.result {
         case .success(let value):
           print("로그인 성공!", value)
         case .failure(let error):
           print("로그인 실패 ㅠㅠ", error)
+          if let data = response.data, let json = try? JSONSerialization.jsonObject(with: data) {
+            print(json)
+          }
         }
       }
   }
