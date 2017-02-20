@@ -24,6 +24,7 @@ final class LoginViewController: UIViewController {
   fileprivate let passwordTextField = UITextField().then {
     $0.borderStyle = .roundedRect
     $0.placeholder = "Password"
+    $0.isSecureTextEntry = true
     $0.font = UIFont.systemFont(ofSize: 14)
   }
   fileprivate let loginButton = UIButton().then {
