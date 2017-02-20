@@ -148,6 +148,10 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
   }
 
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 20
+  }
+
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let contentOffsetBottom = scrollView.contentOffset.y + scrollView.height
     if scrollView.contentSize.height > 0 && contentOffsetBottom >= scrollView.contentSize.height - 300 {
