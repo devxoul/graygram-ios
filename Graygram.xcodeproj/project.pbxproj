@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		030E75F41E585FB60027D94A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E75F31E585FB60027D94A /* LoginViewController.swift */; };
+		030EFD8D1E5B70E900AFBC7C /* Response+ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030EFD8C1E5B70E900AFBC7C /* Response+ErrorInfo.swift */; };
 		03723B211E4F924900B07514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03723B161E4F924900B07514 /* Assets.xcassets */; };
 		03723B221E4F924900B07514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03723B171E4F924900B07514 /* LaunchScreen.storyboard */; };
 		03723B331E4F928700B07514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B2A1E4F928700B07514 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Graygram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		030E75F31E585FB60027D94A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		030EFD8C1E5B70E900AFBC7C /* Response+ErrorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ErrorInfo.swift"; sourceTree = "<group>"; };
 		03723B161E4F924900B07514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03723B181E4F924900B07514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03723B201E4F924900B07514 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030EFD8B1E5B70DE00AFBC7C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				030EFD8C1E5B70E900AFBC7C /* Response+ErrorInfo.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		03723B151E4F924900B07514 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				03723B2A1E4F928700B07514 /* AppDelegate.swift */,
+				030EFD8B1E5B70DE00AFBC7C /* Networking */,
 				03723B3A1E4FA17800B07514 /* Types */,
 				03723B2B1E4F928700B07514 /* Models */,
 				03723B2F1E4F928700B07514 /* ViewControllers */,
@@ -297,6 +308,7 @@
 			files = (
 				03723B3C1E4FA1A200B07514 /* PhotoSize.swift in Sources */,
 				038F0A061E5620F700613148 /* CollectionActivityIndicatorView.swift in Sources */,
+				030EFD8D1E5B70E900AFBC7C /* Response+ErrorInfo.swift in Sources */,
 				03723B331E4F928700B07514 /* AppDelegate.swift in Sources */,
 				03723B371E4F928700B07514 /* PostCardCell.swift in Sources */,
 				03723B3E1E4FA1EB00B07514 /* UIImageView+Photo.swift in Sources */,
