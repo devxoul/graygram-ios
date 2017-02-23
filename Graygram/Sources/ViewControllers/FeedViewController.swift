@@ -24,6 +24,11 @@ final class FeedViewController: UIViewController {
   fileprivate let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
     $0.backgroundColor = .white
     $0.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
+    $0.register(
+      CollectionActivityIndicatorView.self,
+      forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
+      withReuseIdentifier: "activityIndicatorView"
+    )
   }
 
 
@@ -40,11 +45,6 @@ final class FeedViewController: UIViewController {
 
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
-    self.collectionView.register(
-      CollectionActivityIndicatorView.self,
-      forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
-      withReuseIdentifier: "activityIndicatorView"
-    )
 
     self.refreshControl.addTarget(self, action: #selector(self.refreshControlDidChangeValue), for: .valueChanged)
 
