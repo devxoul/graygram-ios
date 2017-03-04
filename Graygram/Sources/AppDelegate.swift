@@ -45,9 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func presentMainSreen() {
-    let feedViewController = FeedViewController()
-    let navigationController = UINavigationController(rootViewController: feedViewController)
-    self.window?.rootViewController = navigationController
+    let tabBarController = MainTabBarController()
+    self.window?.rootViewController = tabBarController
   }
 
 }
