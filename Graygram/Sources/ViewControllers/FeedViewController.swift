@@ -32,6 +32,8 @@ final class FeedViewController: UIViewController {
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nil, bundle: nil)
     self.tabBarItem.title = "Feed"
+    self.tabBarItem.image = UIImage(named: "tab-feed")
+    self.tabBarItem.selectedImage = UIImage(named: "tab-feed-selected")
   }
   
   required init?(coder aDecoder: NSCoder) {
