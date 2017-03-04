@@ -199,7 +199,7 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-    let height: CGFloat = self.nextURLString != nil ? 44 : 0
+    let height: CGFloat = (self.nextURLString != nil || self.posts.isEmpty) ? 44 : 0
     return CGSize(width: collectionView.width, height: height)
   }
 
