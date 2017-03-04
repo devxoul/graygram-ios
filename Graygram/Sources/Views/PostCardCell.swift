@@ -64,8 +64,8 @@ final class PostCardCell: UICollectionViewCell {
   }
 
   fileprivate let likeButton = UIButton().then {
-    $0.setBackgroundImage(#imageLiteral(resourceName: "icon_like"), for: .normal)
-    $0.setBackgroundImage(#imageLiteral(resourceName: "icon_like_selected"), for: .selected)
+    $0.setBackgroundImage(UIImage(named: "icon-like"), for: .normal)
+    $0.setBackgroundImage(UIImage(named: "icon-like-selected"), for: .selected)
   }
   fileprivate let likeCountLabel = UILabel().then {
     $0.font = Font.likeCountLabel
