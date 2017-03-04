@@ -21,6 +21,8 @@ final class MainTabBarController: UITabBarController {
 
   init() {
     super.init(nibName: nil, bundle: nil)
+    self.delegate = self
+
     self.viewControllers = [
       UINavigationController(rootViewController: self.feedViewController),
       self.fakeUploadViewController,
@@ -29,6 +31,22 @@ final class MainTabBarController: UITabBarController {
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+
+}
+
+
+// MARK: - UITabBarControllerDelegate
+
+extension MainTabBarController: UITabBarControllerDelegate {
+
+  func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+    // `fakeUploadViewController` 탭을 선택하면 실제로 탭을 선택하는 대신 `PostEditorViewController`를 띄웁니다.
+    if viewController === self.fakeUploadViewController {
+      print("업로드 버튼 선택!")
+      return false
+    }
+    return true
   }
 
 }
