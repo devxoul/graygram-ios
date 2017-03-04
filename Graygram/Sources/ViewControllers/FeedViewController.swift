@@ -27,6 +27,18 @@ final class FeedViewController: UIViewController {
   }
 
 
+  // MARK: Initializing
+
+  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    super.init(nibName: nil, bundle: nil)
+    self.tabBarItem.title = "Feed"
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+
   // MARK: View Life Cycle
 
   override func viewDidLoad() {
