@@ -27,6 +27,7 @@ final class ImageCropViewController: UIViewController {
   init(image: UIImage) {
     self.originalImage = image
     super.init(nibName: nil, bundle: nil)
+    self.imageView.image = image
   }
   
   required init?(coder aDecoder: NSCoder) {
