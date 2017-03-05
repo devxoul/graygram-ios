@@ -110,6 +110,7 @@ final class ImageCropViewController: UIViewController {
     let contentInsetTopBottom = (self.scrollView.height - self.cropAreaView.height) / 2
     self.scrollView.contentInset.top = contentInsetTopBottom
     self.scrollView.contentInset.bottom = contentInsetTopBottom
+    self.scrollView.contentSize = self.imageView.size
   }
 
 }
