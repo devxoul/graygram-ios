@@ -11,11 +11,6 @@ import UIKit
 /// 이미지를 정사각형으로 크롭하는 뷰 컨트롤러
 final class ImageCropViewController: UIViewController {
 
-  // MARK: Properties
-
-  fileprivate let originalImage: UIImage
-
-
   // MARK: UI
 
   fileprivate let scrollView = UIScrollView().then {
@@ -46,7 +41,6 @@ final class ImageCropViewController: UIViewController {
   // MARK: Initializing
 
   init(image: UIImage) {
-    self.originalImage = image
     super.init(nibName: nil, bundle: nil)
     self.title = "Crop"
     self.navigationItem.leftBarButtonItem = UIBarButtonItem(
@@ -109,10 +103,10 @@ final class ImageCropViewController: UIViewController {
 
   /// 이미지 뷰 크기와 스크롤 뷰 컨텐츠 크기를 초기화합니다.
   func initializeContentSizeIfNeeded() {
-    guard self.imageView.size == .zero else { return }
+    guard self.imageView.size == .zero, let image = self.imageView.image else { return }
 
-    let imageWidth = self.originalImage.size.width
-    let imageHeight = self.originalImage.size.height
+    let imageWidth = image.size.width
+    let imageHeight = image.size.height
 
     if imageWidth > imageHeight {
       self.imageView.height = self.cropAreaView.height
@@ -148,6 +142,7 @@ final class ImageCropViewController: UIViewController {
 
   func doneButtonDidTap() {
     print("이미지 편집 완료")
+
   }
 
 }
