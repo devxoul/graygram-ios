@@ -16,6 +16,12 @@ final class ImageCropViewController: UIViewController {
   fileprivate let originalImage: UIImage
 
 
+  // MARK: UI
+
+  fileprivate let scrollView = UIScrollView()
+  fileprivate let imageView = UIImageView()
+
+
   // MARK: Initializing
 
   init(image: UIImage) {
@@ -32,6 +38,14 @@ final class ImageCropViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = .white
+    self.scrollView.addSubview(self.imageView)
+    self.view.addSubview(self.scrollView)
+
+    self.scrollView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+  }
   }
 
 }
