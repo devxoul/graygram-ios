@@ -48,6 +48,7 @@ final class ImageCropViewController: UIViewController {
   init(image: UIImage) {
     self.originalImage = image
     super.init(nibName: nil, bundle: nil)
+    self.title = "Crop"
     self.automaticallyAdjustsScrollViewInsets = false
     self.imageView.image = image
   }
