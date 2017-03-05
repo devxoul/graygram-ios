@@ -21,6 +21,8 @@ final class ImageCropViewController: UIViewController {
   fileprivate let scrollView = UIScrollView().then {
     $0.alwaysBounceHorizontal = true
     $0.alwaysBounceVertical = true
+    $0.showsHorizontalScrollIndicator = false
+    $0.showsVerticalScrollIndicator = false
   }
   fileprivate let imageView = UIImageView()
 
