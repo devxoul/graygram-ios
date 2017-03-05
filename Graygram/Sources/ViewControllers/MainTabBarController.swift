@@ -38,6 +38,7 @@ final class MainTabBarController: UITabBarController {
 
   fileprivate func presentImagePickerController() {
     let pickerController = UIImagePickerController()
+    pickerController.delegate = self
     self.present(pickerController, animated: true, completion: nil)
   }
 
