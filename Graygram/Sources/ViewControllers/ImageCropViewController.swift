@@ -11,9 +11,15 @@ import UIKit
 /// 이미지를 정사각형으로 크롭하는 뷰 컨트롤러
 final class ImageCropViewController: UIViewController {
 
+  // MARK: Properties
+
+  fileprivate let originalImage: UIImage
+
+
   // MARK: Initializing
 
   init(image: UIImage) {
+    self.originalImage = image
     super.init(nibName: nil, bundle: nil)
   }
   
