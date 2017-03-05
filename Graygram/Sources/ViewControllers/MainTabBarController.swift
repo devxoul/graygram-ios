@@ -58,3 +58,15 @@ extension MainTabBarController: UITabBarControllerDelegate {
   }
 
 }
+
+
+// MARK: - UIImagePickerControllerDelegate
+
+extension MainTabBarController: UIImagePickerControllerDelegate {
+}
+
+
+// MARK: - UINavigationControllerDelegate
+
+extension MainTabBarController: UINavigationControllerDelegate {
+}
