@@ -33,6 +33,14 @@ final class MainTabBarController: UITabBarController {
     fatalError("init(coder:) has not been implemented")
   }
 
+
+  // MARK: Presenting
+
+  fileprivate func presentImagePickerController() {
+    let pickerController = UIImagePickerController()
+    self.present(pickerController, animated: true, completion: nil)
+  }
+
 }
 
 
@@ -43,7 +51,7 @@ extension MainTabBarController: UITabBarControllerDelegate {
   func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
     // `fakeUploadViewController` 탭을 선택하면 실제로 탭을 선택하는 대신 `PostEditorViewController`를 띄웁니다.
     if viewController === self.fakeUploadViewController {
-      print("업로드 버튼 선택!")
+      self.presentImagePickerController()
       return false
     }
     return true
