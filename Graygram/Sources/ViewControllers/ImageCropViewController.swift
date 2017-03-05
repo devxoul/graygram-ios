@@ -111,8 +111,15 @@ final class ImageCropViewController: UIViewController {
     self.scrollView.contentInset.top = contentInsetTopBottom
     self.scrollView.contentInset.bottom = contentInsetTopBottom
     self.scrollView.contentSize = self.imageView.size
-    self.scrollView.contentOffset.x = (self.scrollView.contentSize.width - self.scrollView.width) / 2
-    self.scrollView.contentOffset.y = (self.scrollView.contentSize.height - self.scrollView.height) / 2
+    self.centerScrollView(animated: false)
+  }
+
+  func centerScrollView(animated: Bool) {
+    let targetContentOffset = CGPoint(
+      x: (self.scrollView.contentSize.width - self.scrollView.width) / 2,
+      y: (self.scrollView.contentSize.height - self.scrollView.height) / 2
+    )
+    self.scrollView.setContentOffset(targetContentOffset, animated: animated)
   }
 
 }
