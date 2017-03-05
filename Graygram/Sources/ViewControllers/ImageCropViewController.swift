@@ -18,7 +18,10 @@ final class ImageCropViewController: UIViewController {
 
   // MARK: UI
 
-  fileprivate let scrollView = UIScrollView()
+  fileprivate let scrollView = UIScrollView().then {
+    $0.alwaysBounceHorizontal = true
+    $0.alwaysBounceVertical = true
+  }
   fileprivate let imageView = UIImageView()
 
   fileprivate let cropAreaView = UIView().then {
