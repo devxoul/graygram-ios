@@ -54,6 +54,11 @@ final class ImageCropViewController: UIViewController {
       target: self,
       action: #selector(cancelButtonDidTap)
     )
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+      barButtonSystemItem: .done,
+      target: self,
+      action: #selector(doneButtonDidTap)
+    )
 
     self.automaticallyAdjustsScrollViewInsets = false
     self.imageView.image = image
@@ -139,6 +144,10 @@ final class ImageCropViewController: UIViewController {
 
   func cancelButtonDidTap() {
     _ = self.navigationController?.popViewController(animated: true)
+  }
+
+  func doneButtonDidTap() {
+    print("이미지 편집 완료")
   }
 
 }
