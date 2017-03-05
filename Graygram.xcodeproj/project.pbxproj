@@ -22,6 +22,7 @@
 		03723B3E1E4FA1EB00B07514 /* UIImageView+Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B3D1E4FA1EB00B07514 /* UIImageView+Photo.swift */; };
 		038F0A061E5620F700613148 /* CollectionActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F0A051E5620F700613148 /* CollectionActivityIndicatorView.swift */; };
 		03A5C51C1E6B310200515C60 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5C51B1E6B310200515C60 /* MainTabBarController.swift */; };
+		03E0F0FF1E6C90760004EFB4 /* ImageCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0F0FE1E6C90760004EFB4 /* ImageCropViewController.swift */; };
 		B2BB90D47274097853FE19A6 /* Pods_Graygram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		03723B3D1E4FA1EB00B07514 /* UIImageView+Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Photo.swift"; sourceTree = "<group>"; };
 		038F0A051E5620F700613148 /* CollectionActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionActivityIndicatorView.swift; sourceTree = "<group>"; };
 		03A5C51B1E6B310200515C60 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		03E0F0FE1E6C90760004EFB4 /* ImageCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropViewController.swift; sourceTree = "<group>"; };
 		03E16E691E464B4F0061E685 /* Graygram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graygram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2615165B4186F1C5887786B7 /* Pods-Graygram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Graygram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Graygram/Pods-Graygram.debug.xcconfig"; sourceTree = "<group>"; };
 		4024640E30E4004B5C157283 /* Pods-Graygram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Graygram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Graygram/Pods-Graygram.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				03A5C51B1E6B310200515C60 /* MainTabBarController.swift */,
 				030E75F31E585FB60027D94A /* LoginViewController.swift */,
 				03723B301E4F928700B07514 /* FeedViewController.swift */,
+				03E0F0FE1E6C90760004EFB4 /* ImageCropViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				030EFD8F1E5B7B0B00AFBC7C /* SplashViewController.swift in Sources */,
 				03723B331E4F928700B07514 /* AppDelegate.swift in Sources */,
 				03723B371E4F928700B07514 /* PostCardCell.swift in Sources */,
+				03E0F0FF1E6C90760004EFB4 /* ImageCropViewController.swift in Sources */,
 				03723B3E1E4FA1EB00B07514 /* UIImageView+Photo.swift in Sources */,
 				03A5C51C1E6B310200515C60 /* MainTabBarController.swift in Sources */,
 				03723B391E4F969000B07514 /* User.swift in Sources */,
