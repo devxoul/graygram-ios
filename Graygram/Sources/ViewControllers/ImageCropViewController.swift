@@ -26,6 +26,16 @@ final class ImageCropViewController: UIViewController {
     $0.layer.borderColor = UIColor.lightGray.cgColor
     $0.layer.borderWidth = 1 / UIScreen.main.scale
   }
+  fileprivate let cropAreaTopCoverView = UIView().then {
+    $0.isUserInteractionEnabled = false
+    $0.backgroundColor = .white
+    $0.alpha = 0.9
+  }
+  fileprivate let cropAreaBottomCoverView = UIView().then {
+    $0.isUserInteractionEnabled = false
+    $0.backgroundColor = .white
+    $0.alpha = 0.9
+  }
 
 
   // MARK: Initializing
@@ -48,6 +58,8 @@ final class ImageCropViewController: UIViewController {
     self.view.backgroundColor = .white
     self.scrollView.addSubview(self.imageView)
     self.view.addSubview(self.scrollView)
+    self.view.addSubview(self.cropAreaTopCoverView)
+    self.view.addSubview(self.cropAreaBottomCoverView)
     self.view.addSubview(self.cropAreaView)
 
     self.scrollView.snp.makeConstraints { make in
@@ -58,6 +70,14 @@ final class ImageCropViewController: UIViewController {
       make.width.equalToSuperview()
       make.height.equalTo(self.cropAreaView.snp.width)
       make.centerY.equalToSuperview()
+    }
+    self.cropAreaTopCoverView.snp.makeConstraints { make in
+      make.top.left.right.equalToSuperview()
+      make.bottom.equalTo(self.cropAreaView.snp.top)
+    }
+    self.cropAreaBottomCoverView.snp.makeConstraints { make in
+      make.top.equalTo(self.cropAreaView.snp.bottom)
+      make.bottom.left.right.equalToSuperview()
     }
   }
 
