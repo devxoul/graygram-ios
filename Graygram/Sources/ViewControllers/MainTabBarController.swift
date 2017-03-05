@@ -67,7 +67,8 @@ extension MainTabBarController: UIImagePickerControllerDelegate {
 
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
-    let cropViewController = ImageCropViewController(image: selectedImage)
+    guard let grayscaledImage = selectedImage.grayscaled() else { return }
+    let cropViewController = ImageCropViewController(image: grayscaledImage)
     picker.pushViewController(cropViewController, animated: true)
   }
 
