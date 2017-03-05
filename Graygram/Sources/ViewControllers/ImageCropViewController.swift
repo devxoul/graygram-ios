@@ -47,6 +47,12 @@ final class ImageCropViewController: UIViewController {
       make.edges.equalToSuperview()
     }
   }
+
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    if self.imageView.size == .zero {
+      self.imageView.size = self.scrollView.size
+    }
   }
 
 }
