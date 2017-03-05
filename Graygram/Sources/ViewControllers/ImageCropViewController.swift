@@ -84,8 +84,27 @@ final class ImageCropViewController: UIViewController {
 
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    if self.imageView.size == .zero {
-      self.imageView.size = self.scrollView.size
+    self.initializeContentSizeIfNeeded()
+  }
+
+
+  // MARK: Scroll View Utils
+
+  /// 이미지 뷰 크기와 스크롤 뷰 컨텐츠 크기를 초기화합니다.
+  func initializeContentSizeIfNeeded() {
+    guard self.imageView.size == .zero else { return }
+
+    let imageWidth = self.originalImage.size.width
+    let imageHeight = self.originalImage.size.height
+
+    if imageWidth > imageHeight {
+      self.imageView.height = self.cropAreaView.height
+      self.imageView.width = self.cropAreaView.height * imageWidth / imageHeight
+    } else if imageWidth < imageHeight {
+      self.imageView.width = self.cropAreaView.width
+      self.imageView.height = self.cropAreaView.width * imageHeight / imageWidth
+    } else {
+      self.imageView.size = self.cropAreaView.size
     }
   }
 
