@@ -64,6 +64,11 @@ extension MainTabBarController: UITabBarControllerDelegate {
 // MARK: - UIImagePickerControllerDelegate
 
 extension MainTabBarController: UIImagePickerControllerDelegate {
+
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    print("이미지 선택: \(info)")
+  }
+
 }
 
 
