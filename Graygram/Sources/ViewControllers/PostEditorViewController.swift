@@ -126,6 +126,7 @@ final class PostEditorViewController: UIViewController {
                   userInfo: ["post": post]
                 )
               }
+              self.dismiss(animated: true, completion: nil)
 
             case .failure(let error):
               print("업로드 실패: \(error)")
