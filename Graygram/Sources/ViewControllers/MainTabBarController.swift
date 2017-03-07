@@ -71,7 +71,8 @@ extension MainTabBarController: UIImagePickerControllerDelegate {
 
     let cropViewController = ImageCropViewController(image: grayscaledImage)
     cropViewController.didFinishCropping = { [weak cropViewController] croppedImage in
-      print("Push PostEditorViewController")
+      let postEditorViewController = PostEditorViewController(image: croppedImage)
+      cropViewController?.navigationController?.pushViewController(postEditorViewController, animated: true)
     }
     picker.pushViewController(cropViewController, animated: true)
   }
