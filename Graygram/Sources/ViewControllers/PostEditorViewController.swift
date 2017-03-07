@@ -116,7 +116,13 @@ final class PostEditorViewController: UIViewController {
         case .success(let request, _, _):
           print("인코딩 성공")
           request.responseJSON { response in
-            print(response)
+            switch response.result {
+            case .success(let value):
+              print("업로드 성공: \(value)")
+
+            case .failure(let error):
+              print("업로드 실패: \(error)")
+            }
           }
 
         case .failure(let error):
