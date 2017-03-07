@@ -36,6 +36,7 @@ final class PostEditorViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.tableView.register(PostEditorImageCell.self, forCellReuseIdentifier: "imageCell")
     self.view.addSubview(self.tableView)
 
     self.tableView.snp.makeConstraints { make in
