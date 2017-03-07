@@ -10,9 +10,15 @@ import UIKit
 
 final class PostEditorViewController: UIViewController {
 
+  // MARK: Properties
+
+  fileprivate let image: UIImage
+
+
   // MARK: Initializing
 
   init(image: UIImage) {
+    self.image = image
     super.init(nibName: nil, bundle: nil)
   }
   
