@@ -55,6 +55,20 @@ final class PostEditorViewController: UIViewController {
     )
   }
 
+
+  // MARK: Notification
+
+  func keyboardWillChangeFrame(notification: Notification) {
+    guard let keyboardFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect,
+      let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval
+    else { return }
+    let keyboardVisibleHeight = UIScreen.main.bounds.height - keyboardFrame.origin.y
+    UIView.animate(withDuration: duration) {
+      self.tableView.contentInset.bottom = keyboardVisibleHeight
+      self.tableView.scrollIndicatorInsets.bottom = keyboardVisibleHeight
+    }
+  }
+
 }
 
 extension PostEditorViewController: UITableViewDataSource {
