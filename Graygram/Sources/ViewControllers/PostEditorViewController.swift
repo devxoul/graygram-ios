@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Alamofire
+
 final class PostEditorViewController: UIViewController {
 
   // MARK: Properties
@@ -94,7 +96,25 @@ final class PostEditorViewController: UIViewController {
   }
 
   func doneButtonDidTap() {
-    print("새 포스트 작성 API 요청")
+    let urlString = "https://api.graygram.com/posts"
+    let headers: HTTPHeaders = [
+      "Accept": "application/json",
+    ]
+    Alamofire.upload(
+      multipartFormData: { formData in
+        if let imageData = UIImageJPEGRepresentation(self.image, 1) {
+          formData.append(imageData, withName: "photo", fileName: "photo.jpg", mimeType: "image/jpeg")
+        }
+        if let messageData = self.message?.data(using: .utf8) {
+          formData.append(messageData, withName: "message")
+        }
+      },
+      to: urlString,
+      headers: headers,
+      encodingCompletion: { result in
+        print("인코딩 결과: \(result)")
+      }
+    )
   }
 
 }
