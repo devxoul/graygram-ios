@@ -10,6 +10,13 @@ import UIKit
 
 final class PostEditorMessageCell: UITableViewCell {
 
+  // MARK: Constants
+
+  struct Font {
+    static let textView = UIFont.systemFont(ofSize: 14)
+  }
+
+
   // MARK: UI
 
   fileprivate let textView = UITextView()
@@ -20,6 +27,7 @@ final class PostEditorMessageCell: UITableViewCell {
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     self.selectionStyle = .none
+    self.textView.font = Font.textView
     self.contentView.addSubview(self.textView)
   }
   
