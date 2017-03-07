@@ -110,6 +110,7 @@ final class PostEditorViewController: UIViewController {
 
   func doneButtonDidTap() {
     self.setControlsEnabled(false)
+    self.progressView.isHidden = false
 
     let urlString = "https://api.graygram.com/posts"
     let headers: HTTPHeaders = [
@@ -146,12 +147,14 @@ final class PostEditorViewController: UIViewController {
             case .failure(let error):
               print("업로드 실패: \(error)")
               self.setControlsEnabled(true)
+              self.progressView.isHidden = true
             }
           }
 
         case .failure(let error):
           print("인코딩 실패: \(error)")
           self.setControlsEnabled(true)
+          self.progressView.isHidden = true
         }
       }
     )
