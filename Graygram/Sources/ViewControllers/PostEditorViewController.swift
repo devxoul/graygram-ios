@@ -94,7 +94,10 @@ extension PostEditorViewController: UITableViewDataSource {
       let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! PostEditorMessageCell
       cell.configure(message: self.message)
       cell.textDidChange = { message in
-        print(message)
+        self.message = message
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+        self.tableView.scrollToRow(at: indexPath, at: .none, animated: false)
       }
       return cell
 
