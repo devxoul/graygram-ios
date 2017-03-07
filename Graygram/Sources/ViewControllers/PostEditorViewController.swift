@@ -13,6 +13,7 @@ final class PostEditorViewController: UIViewController {
   // MARK: Properties
 
   fileprivate let image: UIImage
+  fileprivate var message: String?
 
 
   // MARK: UI
