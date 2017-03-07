@@ -144,7 +144,17 @@ final class ImageCropViewController: UIViewController {
 
   func doneButtonDidTap() {
     print("이미지 편집 완료")
+    guard let image = self.imageView.image else { return }
+    var rect = self.scrollView.convert(self.cropAreaView.frame, from: self.cropAreaView.superview)
+    rect.origin.x *= image.size.width / self.imageView.width
+    rect.origin.y *= image.size.height / self.imageView.height
+    rect.size.width *= image.size.width / self.imageView.width
+    rect.size.height *= image.size.height / self.imageView.height
 
+    if let croppedCGImage = image.cgImage?.cropping(to: rect) {
+      let croppedImage = UIImage(cgImage: croppedCGImage)
+      print(croppedImage)
+    }
   }
 
 }
