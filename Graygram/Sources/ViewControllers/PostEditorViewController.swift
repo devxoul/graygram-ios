@@ -46,6 +46,13 @@ final class PostEditorViewController: UIViewController {
     self.tableView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
+
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(keyboardWillChangeFrame),
+      name: .UIKeyboardWillChangeFrame,
+      object: nil
+    )
   }
 
 }
