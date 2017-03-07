@@ -11,6 +11,11 @@ import UIKit
 /// 이미지를 정사각형으로 크롭하는 뷰 컨트롤러
 final class ImageCropViewController: UIViewController {
 
+  // MARK: Properties
+
+  var didFinishCropping: ((UIImage) -> Void)?
+
+
   // MARK: UI
 
   fileprivate let scrollView = UIScrollView().then {
