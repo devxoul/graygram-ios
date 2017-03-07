@@ -17,6 +17,11 @@ final class PostEditorMessageCell: UITableViewCell {
   }
 
 
+  // MARK: Properties
+
+  var textDidChange: ((String?) -> Void)?
+
+
   // MARK: UI
 
   fileprivate let textView = UITextView()
