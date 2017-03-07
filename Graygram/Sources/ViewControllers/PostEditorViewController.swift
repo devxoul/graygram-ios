@@ -100,6 +100,8 @@ final class PostEditorViewController: UIViewController {
   }
 
   func doneButtonDidTap() {
+    self.setControlsEnabled(false)
+
     let urlString = "https://api.graygram.com/posts"
     let headers: HTTPHeaders = [
       "Accept": "application/json",
@@ -134,14 +136,25 @@ final class PostEditorViewController: UIViewController {
 
             case .failure(let error):
               print("업로드 실패: \(error)")
+              self.setControlsEnabled(true)
             }
           }
 
         case .failure(let error):
           print("인코딩 실패: \(error)")
+          self.setControlsEnabled(true)
         }
       }
     )
+  }
+
+
+  // MARK: Utils
+
+  func setControlsEnabled(_ enabled: Bool) {
+    self.navigationItem.leftBarButtonItem?.isEnabled = enabled
+    self.navigationItem.rightBarButtonItem?.isEnabled = enabled
+    self.view.isUserInteractionEnabled = enabled
   }
 
 }
