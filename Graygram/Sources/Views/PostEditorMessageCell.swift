@@ -39,7 +39,9 @@ final class PostEditorMessageCell: UITableViewCell {
   // MARK: Size
 
   class func height(width: CGFloat, message: String) -> CGFloat {
-    return message.size(width: width, font: Font.textView).height
+    let messageHeight = message.size(width: width, font: Font.textView).height
+    let minimumHeight = ceil(Font.textView.lineHeight * 3)
+    return max(messageHeight, minimumHeight)
   }
 
 
