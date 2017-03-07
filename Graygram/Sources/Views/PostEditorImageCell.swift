@@ -19,6 +19,7 @@ final class PostEditorImageCell: UITableViewCell {
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+    self.selectionStyle = .none
     self.contentView.addSubview(self.photoView)
   }
   
