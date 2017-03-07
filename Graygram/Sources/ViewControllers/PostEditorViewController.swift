@@ -93,6 +93,9 @@ extension PostEditorViewController: UITableViewDataSource {
     case 1:
       let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! PostEditorMessageCell
       cell.configure(message: self.message)
+      cell.textDidChange = { message in
+        print(message)
+      }
       return cell
 
     default:
