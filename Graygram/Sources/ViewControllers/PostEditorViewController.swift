@@ -66,6 +66,12 @@ final class PostEditorViewController: UIViewController {
     UIView.animate(withDuration: duration) {
       self.tableView.contentInset.bottom = keyboardVisibleHeight
       self.tableView.scrollIndicatorInsets.bottom = keyboardVisibleHeight
+
+      // 키보드가 보여지는 경우 메시지 셀로 스크롤
+      if keyboardVisibleHeight > 0 {
+        let indexPath = IndexPath(row: 1, section: 0)
+        self.tableView.scrollToRow(at: indexPath, at: .none, animated: false)
+      }
     }
   }
 
