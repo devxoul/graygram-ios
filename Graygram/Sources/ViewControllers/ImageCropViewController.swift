@@ -18,6 +18,7 @@ final class ImageCropViewController: UIViewController {
     $0.alwaysBounceVertical = true
     $0.showsHorizontalScrollIndicator = false
     $0.showsVerticalScrollIndicator = false
+    $0.maximumZoomScale = 3
   }
   fileprivate let imageView = UIImageView()
 
@@ -68,6 +69,7 @@ final class ImageCropViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = .white
+    self.scrollView.delegate = self
     self.scrollView.addSubview(self.imageView)
     self.view.addSubview(self.scrollView)
     self.view.addSubview(self.cropAreaTopCoverView)
@@ -143,6 +145,17 @@ final class ImageCropViewController: UIViewController {
   func doneButtonDidTap() {
     print("이미지 편집 완료")
 
+  }
+
+}
+
+
+// MARK: - UIScrollViewDelegate
+
+extension ImageCropViewController: UIScrollViewDelegate {
+
+  func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    return self.imageView
   }
 
 }
