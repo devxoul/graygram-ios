@@ -127,15 +127,18 @@ final class PostEditorViewController: UIViewController {
       },
       to: urlString,
       headers: headers,
-      encodingCompletion: { result in
+      encodingCompletion: { [weak self] result in
+        guard let `self` = self else { return }
         switch result {
         case .success(let request, _, _):
           print("인코딩 성공")
           request
-            .uploadProgress { progress in
+            .uploadProgress { [weak self] progress in
+              guard let `self` = self else { return }
               self.progressView.progress = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
             }
-            .responseJSON { response in
+            .responseJSON { [weak self] response in
+              guard let `self` = self else { return }
               switch response.result {
               case .success(let value):
                 print("업로드 성공: \(value)")
