@@ -38,6 +38,7 @@ final class PostEditorViewController: UIViewController {
     super.viewDidLoad()
     self.tableView.register(PostEditorImageCell.self, forCellReuseIdentifier: "imageCell")
     self.tableView.dataSource = self
+    self.tableView.delegate = self
     self.view.addSubview(self.tableView)
 
     self.tableView.snp.makeConstraints { make in
@@ -57,6 +58,14 @@ extension PostEditorViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! PostEditorImageCell
     cell.configure(image: self.image)
     return cell
+  }
+
+}
+
+extension PostEditorViewController: UITableViewDelegate {
+
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return PostEditorImageCell.height(width: tableView.width)
   }
 
 }
