@@ -36,6 +36,14 @@ final class PostEditorMessageCell: UITableViewCell {
   }
 
 
+  // MARK: Configuring
+
+  func configure(message: String) {
+    self.textView.text = message
+    self.setNeedsLayout()
+  }
+
+
   // MARK: Size
 
   class func height(width: CGFloat, message: String) -> CGFloat {
