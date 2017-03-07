@@ -27,6 +27,11 @@ final class PostEditorViewController: UIViewController {
     self.image = image
     super.init(nibName: nil, bundle: nil)
     self.title = "New Post"
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+      barButtonSystemItem: .cancel,
+      target: self,
+      action: #selector(cancelButtonDidTap)
+    )
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -74,6 +79,13 @@ final class PostEditorViewController: UIViewController {
         self.tableView.scrollToRow(at: indexPath, at: .none, animated: false)
       }
     }
+  }
+
+
+  // MARK: Actions
+
+  func cancelButtonDidTap() {
+    _ = self.navigationController?.popViewController(animated: true)
   }
 
 }
