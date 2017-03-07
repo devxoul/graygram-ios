@@ -133,7 +133,7 @@ final class PostEditorViewController: UIViewController {
           print("인코딩 성공")
           request
             .uploadProgress { progress in
-              print(progress)
+              self.progressView.progress = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
             }
             .responseJSON { response in
               switch response.result {
