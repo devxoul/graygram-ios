@@ -48,7 +48,7 @@ final class PostEditorMessageCell: UITableViewCell {
 
   class func height(width: CGFloat, message: String?) -> CGFloat {
     let messageHeight = message?.size(width: width, font: Font.textView).height ?? 0
-    let minimumHeight = ceil(Font.textView.lineHeight * 3)
+    let minimumHeight = ceil(Font.textView.lineHeight * 3) + 10 + 10 // UITextView의 기본 inset
     return max(messageHeight, minimumHeight)
   }
 
