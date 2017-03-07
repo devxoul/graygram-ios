@@ -37,11 +37,26 @@ final class PostEditorViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.tableView.register(PostEditorImageCell.self, forCellReuseIdentifier: "imageCell")
+    self.tableView.dataSource = self
     self.view.addSubview(self.tableView)
 
     self.tableView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
+  }
+
+}
+
+extension PostEditorViewController: UITableViewDataSource {
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 1
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! PostEditorImageCell
+    cell.configure(image: self.image)
+    return cell
   }
 
 }
