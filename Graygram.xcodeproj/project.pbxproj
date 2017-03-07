@@ -24,6 +24,7 @@
 		03A5C51C1E6B310200515C60 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5C51B1E6B310200515C60 /* MainTabBarController.swift */; };
 		03DF95251E6F0B2C00E31665 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF95241E6F0B2C00E31665 /* PostEditorViewController.swift */; };
 		03DF95271E6F1DEB00E31665 /* PostEditorImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF95261E6F1DEB00E31665 /* PostEditorImageCell.swift */; };
+		03DF95291E6F200000E31665 /* PostEditorMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF95281E6F200000E31665 /* PostEditorMessageCell.swift */; };
 		03E0F0FF1E6C90760004EFB4 /* ImageCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0F0FE1E6C90760004EFB4 /* ImageCropViewController.swift */; };
 		03E0F1011E6CAC800004EFB4 /* UIImage+Grayscaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E0F1001E6CAC800004EFB4 /* UIImage+Grayscaled.swift */; };
 		B2BB90D47274097853FE19A6 /* Pods_Graygram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002B9D7D609C0CB98FB046F5 /* Pods_Graygram.framework */; };
@@ -49,6 +50,7 @@
 		03A5C51B1E6B310200515C60 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		03DF95241E6F0B2C00E31665 /* PostEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		03DF95261E6F1DEB00E31665 /* PostEditorImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorImageCell.swift; sourceTree = "<group>"; };
+		03DF95281E6F200000E31665 /* PostEditorMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorMessageCell.swift; sourceTree = "<group>"; };
 		03E0F0FE1E6C90760004EFB4 /* ImageCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropViewController.swift; sourceTree = "<group>"; };
 		03E0F1001E6CAC800004EFB4 /* UIImage+Grayscaled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Grayscaled.swift"; sourceTree = "<group>"; };
 		03E16E691E464B4F0061E685 /* Graygram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graygram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				03723B321E4F928700B07514 /* PostCardCell.swift */,
 				038F0A051E5620F700613148 /* CollectionActivityIndicatorView.swift */,
 				03DF95261E6F1DEB00E31665 /* PostEditorImageCell.swift */,
+				03DF95281E6F200000E31665 /* PostEditorMessageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			files = (
 				03723B3C1E4FA1A200B07514 /* PhotoSize.swift in Sources */,
 				038F0A061E5620F700613148 /* CollectionActivityIndicatorView.swift in Sources */,
+				03DF95291E6F200000E31665 /* PostEditorMessageCell.swift in Sources */,
 				03E0F1011E6CAC800004EFB4 /* UIImage+Grayscaled.swift in Sources */,
 				030EFD8D1E5B70E900AFBC7C /* Response+ErrorInfo.swift in Sources */,
 				030EFD8F1E5B7B0B00AFBC7C /* SplashViewController.swift in Sources */,
