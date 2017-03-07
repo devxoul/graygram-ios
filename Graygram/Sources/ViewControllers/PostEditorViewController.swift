@@ -26,6 +26,7 @@ final class PostEditorViewController: UIViewController {
   init(image: UIImage) {
     self.image = image
     super.init(nibName: nil, bundle: nil)
+    self.title = "New Post"
   }
   
   required init?(coder aDecoder: NSCoder) {
