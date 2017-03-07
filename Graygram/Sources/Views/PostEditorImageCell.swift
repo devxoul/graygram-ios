@@ -34,6 +34,13 @@ final class PostEditorImageCell: UITableViewCell {
   }
 
 
+  // MARK: Size
+
+  class func height(width: CGFloat) -> CGFloat {
+    return width // 정사각형
+  }
+
+
   // MARK: Layout
 
   override func layoutSubviews() {
