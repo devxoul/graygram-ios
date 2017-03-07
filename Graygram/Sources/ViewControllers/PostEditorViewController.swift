@@ -15,6 +15,11 @@ final class PostEditorViewController: UIViewController {
   fileprivate let image: UIImage
 
 
+  // MARK: UI
+
+  fileprivate let tableView = UITableView(frame: .zero, style: .grouped)
+
+
   // MARK: Initializing
 
   init(image: UIImage) {
@@ -31,6 +36,11 @@ final class PostEditorViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.addSubview(self.tableView)
+
+    self.tableView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
   }
 
 }
