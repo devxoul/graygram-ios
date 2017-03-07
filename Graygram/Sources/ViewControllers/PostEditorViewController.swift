@@ -131,25 +131,29 @@ final class PostEditorViewController: UIViewController {
         switch result {
         case .success(let request, _, _):
           print("인코딩 성공")
-          request.responseJSON { response in
-            switch response.result {
-            case .success(let value):
-              print("업로드 성공: \(value)")
-              if let json = value as? [String: Any], let post = Post(JSON: json) {
-                NotificationCenter.default.post(
-                  name: .postDidCreate,
-                  object: self,
-                  userInfo: ["post": post]
-                )
-              }
-              self.dismiss(animated: true, completion: nil)
-
-            case .failure(let error):
-              print("업로드 실패: \(error)")
-              self.setControlsEnabled(true)
-              self.progressView.isHidden = true
+          request
+            .uploadProgress { progress in
+              print(progress)
             }
-          }
+            .responseJSON { response in
+              switch response.result {
+              case .success(let value):
+                print("업로드 성공: \(value)")
+                if let json = value as? [String: Any], let post = Post(JSON: json) {
+                  NotificationCenter.default.post(
+                    name: .postDidCreate,
+                    object: self,
+                    userInfo: ["post": post]
+                  )
+                }
+                self.dismiss(animated: true, completion: nil)
+
+              case .failure(let error):
+                print("업로드 실패: \(error)")
+                self.setControlsEnabled(true)
+                self.progressView.isHidden = true
+              }
+            }
 
         case .failure(let error):
           print("인코딩 실패: \(error)")
