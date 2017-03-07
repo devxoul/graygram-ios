@@ -33,4 +33,12 @@ final class PostEditorImageCell: UITableViewCell {
     self.photoView.image = image
   }
 
+
+  // MARK: Layout
+
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    self.photoView.frame = self.contentView.bounds
+  }
+
 }
