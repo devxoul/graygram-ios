@@ -36,6 +36,13 @@ final class PostEditorMessageCell: UITableViewCell {
   }
 
 
+  // MARK: Size
+
+  class func height(width: CGFloat, message: String) -> CGFloat {
+    return message.size(width: width, font: Font.textView).height
+  }
+
+
   // MARK: Layout
 
   override func layoutSubviews() {
