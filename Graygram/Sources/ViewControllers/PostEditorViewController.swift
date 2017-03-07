@@ -38,6 +38,7 @@ final class PostEditorViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.tableView.register(PostEditorImageCell.self, forCellReuseIdentifier: "imageCell")
+    self.tableView.register(PostEditorMessageCell.self, forCellReuseIdentifier: "messageCell")
     self.tableView.dataSource = self
     self.tableView.delegate = self
     self.view.addSubview(self.tableView)
