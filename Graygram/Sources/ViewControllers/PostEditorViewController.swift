@@ -112,7 +112,16 @@ final class PostEditorViewController: UIViewController {
       to: urlString,
       headers: headers,
       encodingCompletion: { result in
-        print("인코딩 결과: \(result)")
+        switch result {
+        case .success(let request, _, _):
+          print("인코딩 성공")
+          request.responseJSON { response in
+            print(response)
+          }
+
+        case .failure(let error):
+          print("인코딩 실패: \(error)")
+        }
       }
     )
   }
