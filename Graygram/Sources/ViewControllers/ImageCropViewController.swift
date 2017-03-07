@@ -158,7 +158,7 @@ final class ImageCropViewController: UIViewController {
 
     if let croppedCGImage = image.cgImage?.cropping(to: rect) {
       let croppedImage = UIImage(cgImage: croppedCGImage)
-      print(croppedImage)
+      self.didFinishCropping?(croppedImage)
     }
   }
 
