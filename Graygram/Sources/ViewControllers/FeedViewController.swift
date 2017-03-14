@@ -20,7 +20,17 @@ final class FeedViewController: UIViewController {
 
   // MARK: Properties
 
-  fileprivate var viewMode: FeedViewMode = .card
+  fileprivate var viewMode: FeedViewMode = .card {
+    didSet {
+      switch self.viewMode {
+      case .card:
+        self.navigationItem.leftBarButtonItem = self.tileButtonItem
+      case .tile:
+        self.navigationItem.leftBarButtonItem = self.cardButtonItem
+      }
+      self.collectionView.reloadData()
+    }
+  }
   fileprivate var posts: [Post] = []
   fileprivate var nextURLString: String?
   fileprivate var isLoading: Bool = false
