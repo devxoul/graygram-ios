@@ -8,8 +8,6 @@
 
 import UIKit
 
-import Alamofire
-
 final class PostEditorViewController: UIViewController {
 
   // MARK: Properties
