@@ -12,6 +12,7 @@ final class FeedViewController: UIViewController {
 
   // MARK: Properties
 
+  fileprivate var viewMode: FeedViewMode = .card
   fileprivate var posts: [Post] = []
   fileprivate var nextURLString: String?
   fileprivate var isLoading: Bool = false
