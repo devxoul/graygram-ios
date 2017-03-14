@@ -164,9 +164,17 @@ extension FeedViewController: UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! PostCardCell
-    cell.configure(post: self.posts[indexPath.item])
-    return cell
+    switch self.viewMode {
+    case .card:
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! PostCardCell
+      cell.configure(post: self.posts[indexPath.item])
+      return cell
+
+    case .tile:
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tileCell", for: indexPath) as! PostTileCell
+      cell.configure(post: self.posts[indexPath.item])
+      return cell
+    }
   }
 
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
