@@ -28,6 +28,18 @@ final class FeedViewController: UIViewController {
 
   // MARK: UI
 
+  fileprivate let tileButtonItem = UIBarButtonItem(
+    image: UIImage(named: "icon-tile"),
+    style: .plain,
+    target: nil,
+    action: nil
+  )
+  fileprivate let cardButtonItem = UIBarButtonItem(
+    image: UIImage(named: "icon-card"),
+    style: .plain,
+    target: nil,
+    action: nil
+  )
   fileprivate let refreshControl = UIRefreshControl()
   fileprivate let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
     $0.backgroundColor = .white
@@ -44,6 +56,12 @@ final class FeedViewController: UIViewController {
     self.tabBarItem.title = "Feed"
     self.tabBarItem.image = UIImage(named: "tab-feed")
     self.tabBarItem.selectedImage = UIImage(named: "tab-feed-selected")
+    self.navigationItem.leftBarButtonItem = self.tileButtonItem
+
+    self.tileButtonItem.target = self
+    self.tileButtonItem.action = #selector(tileButtonItemDidTap)
+    self.cardButtonItem.target = self
+    self.cardButtonItem.action = #selector(cardButtonItemDidTap)
   }
   
   required init?(coder aDecoder: NSCoder) {
