@@ -13,6 +13,7 @@ final class FeedViewController: UIViewController {
   // MARK: Constants
 
   fileprivate struct Metric {
+    static let cardCellSpacing = CGFloat(20)
     static let tileCellSpacing = CGFloat(3)
   }
 
@@ -227,7 +228,13 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return 20
+    switch self.viewMode {
+    case .card:
+      return Metric.cardCellSpacing
+
+    case .tile:
+      return Metric.tileCellSpacing
+    }
   }
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
