@@ -112,54 +112,27 @@ final class PostEditorViewController: UIViewController {
     self.setControlsEnabled(false)
     self.progressView.isHidden = false
 
-    let urlString = "https://api.graygram.com/posts"
-    let headers: HTTPHeaders = [
-      "Accept": "application/json",
-    ]
-    Alamofire.upload(
-      multipartFormData: { formData in
-        if let imageData = UIImageJPEGRepresentation(self.image, 1) {
-          formData.append(imageData, withName: "photo", fileName: "photo.jpg", mimeType: "image/jpeg")
-        }
-        if let messageData = self.message?.data(using: .utf8) {
-          formData.append(messageData, withName: "message")
-        }
-      },
-      to: urlString,
-      headers: headers,
-      encodingCompletion: { [weak self] result in
+    PostService.create(
+      image: self.image,
+      message: self.message,
+      progress: { [weak self] progress in
         guard let `self` = self else { return }
-        switch result {
-        case .success(let request, _, _):
-          print("인코딩 성공")
-          request
-            .uploadProgress { [weak self] progress in
-              guard let `self` = self else { return }
-              self.progressView.progress = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
-            }
-            .responseJSON { [weak self] response in
-              guard let `self` = self else { return }
-              switch response.result {
-              case .success(let value):
-                print("업로드 성공: \(value)")
-                if let json = value as? [String: Any], let post = Post(JSON: json) {
-                  NotificationCenter.default.post(
-                    name: .postDidCreate,
-                    object: self,
-                    userInfo: ["post": post]
-                  )
-                }
-                self.dismiss(animated: true, completion: nil)
-
-              case .failure(let error):
-                print("업로드 실패: \(error)")
-                self.setControlsEnabled(true)
-                self.progressView.isHidden = true
-              }
-            }
+        self.progressView.progress = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
+      },
+      completion: { [weak self] response in
+        guard let `self` = self else { return }
+        switch response.result {
+        case .success(let post):
+          print("업로드 성공: \(post)")
+          NotificationCenter.default.post(
+            name: .postDidCreate,
+            object: self,
+            userInfo: ["post": post]
+          )
+          self.dismiss(animated: true, completion: nil)
 
         case .failure(let error):
-          print("인코딩 실패: \(error)")
+          print("업로드 실패: \(error)")
           self.setControlsEnabled(true)
           self.progressView.isHidden = true
         }
