@@ -27,13 +27,8 @@ struct AuthService {
       .request(urlString, method: .post, parameters: parameters, headers: headers)
       .validate(statusCode: 200..<400)
       .responseJSON { response in
-        let response: DataResponse<Void> = response.map { result in
-          switch result {
-          case .success:
-            return .success(Void())
-          case .failure(let error):
-            return .failure(error)
-          }
+        let response: DataResponse<Void> = response.flatMap { _ in
+          return .success(Void())
         }
         completion(response)
       }
