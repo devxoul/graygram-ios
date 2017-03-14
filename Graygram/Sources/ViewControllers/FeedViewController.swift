@@ -31,6 +31,7 @@ final class FeedViewController: UIViewController {
   fileprivate let refreshControl = UIRefreshControl()
   fileprivate let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
     $0.backgroundColor = .white
+    $0.alwaysBounceVertical = true
     $0.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
     $0.register(PostTileCell.self, forCellWithReuseIdentifier: "tileCell")
   }
