@@ -140,6 +140,14 @@ final class FeedViewController: UIViewController {
 
   // MARK: Actions
 
+  fileprivate dynamic func tileButtonItemDidTap() {
+    self.viewMode = .tile
+  }
+
+  fileprivate dynamic func cardButtonItemDidTap() {
+    self.viewMode = .card
+  }
+
   fileprivate dynamic func refreshControlDidChangeValue() {
     self.fetchFeed(paging: .refresh)
   }
