@@ -61,4 +61,10 @@ struct PostService {
     )
   }
 
+  static func like(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
+  }
+
+  static func unlike(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
+  }
+
 }
