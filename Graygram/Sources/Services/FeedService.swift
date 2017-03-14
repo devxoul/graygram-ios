@@ -11,7 +11,7 @@ import ObjectMapper
 
 struct FeedService {
 
-  static func feed(paging: Paging, completion: (DataResponse<Feed>) -> Void) {
+  static func feed(paging: Paging, completion: @escaping (DataResponse<Feed>) -> Void) {
     let urlString: String
     switch paging {
     case .refresh:
@@ -23,9 +23,14 @@ struct FeedService {
     Alamofire.request(urlString)
       .validate(statusCode: 200..<400)
       .responseJSON { response in
-        // completion에 전달해야 할 정보:
-        // 1. feeds: [Feed]
-        // 2. nextURLString: String?
+        let response: DataResponse<Feed> = response.flatMap { json in
+          if let feed = Mapper<Feed>().map(JSONObject: json) {
+            return .success(feed)
+          } else {
+            return .failure(MappingError(from: json, to: Feed.self))
+          }
+        }
+        completion(response)
       }
   }
 
