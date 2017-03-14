@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 final class FeedViewController: UIViewController {
 
@@ -85,37 +84,32 @@ final class FeedViewController: UIViewController {
   fileprivate func fetchPosts(more: Bool = false) {
     guard !self.isLoading else { return }
 
-    let urlString: String
+    let paging: Paging
     if !more {
-      urlString = "https://api.graygram.com/feed?limit=10"
+      paging = .refresh
     } else if let nextURLString = self.nextURLString {
-      urlString = nextURLString
+      paging = .next(nextURLString)
     } else {
       return
     }
 
     self.isLoading = true
 
-    Alamofire.request(urlString).responseJSON { [weak self] response in
+    FeedService.feed(paging: paging) { [weak self] response in
       guard let `self` = self else { return }
       self.refreshControl.endRefreshing()
       self.isLoading = false
 
       switch response.result {
-      case .success(let value):
-        guard let json = value as? [String: Any] else { return }
-        let postsJSONArray = json["data"] as? [[String: Any]] ?? []
-        let newPosts = [Post](JSONArray: postsJSONArray) ?? []
-
-        if !more {
+      case .success(let feed):
+        let newPosts = feed.posts ?? []
+        switch paging {
+        case .refresh:
           self.posts = newPosts
-        } else {
+        case .next:
           self.posts.append(contentsOf: newPosts)
         }
-
-        let paging = json["paging"] as? [String: Any]
-        self.nextURLString = paging?["next"] as? String
-
+        self.nextURLString = feed.nextURLString
         self.collectionView.reloadData()
 
       case .failure(let error):
