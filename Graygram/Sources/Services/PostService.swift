@@ -62,6 +62,18 @@ struct PostService {
   }
 
   static func like(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
+    let urlString = "https://api.graygram.com/posts/\(postID)/likes"
+    let headers: HTTPHeaders = [
+      "Accept": "application/json"
+    ]
+    Alamofire.request(urlString, method: .post, headers: headers)
+      .validate(statusCode: 200..<400)
+      .responseData { response in
+        let response: DataResponse<Void> = response.flatMap { _ in
+          return .success(Void())
+        }
+        completion(response)
+      }
   }
 
   static func unlike(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
