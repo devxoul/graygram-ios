@@ -237,6 +237,16 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     }
   }
 
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    switch self.viewMode {
+    case .card:
+      return 0
+
+    case .tile:
+      return Metric.tileCellSpacing
+    }
+  }
+
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let contentOffsetBottom = scrollView.contentOffset.y + scrollView.height
     let didReachBottom = scrollView.contentSize.height > 0
