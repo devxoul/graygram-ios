@@ -28,7 +28,14 @@ struct UserService {
             )
             completion(newResponse)
           } else {
-            // 실패
+            let newResponse = DataResponse<User>(
+              request: response.request,
+              response: response.response,
+              data: response.data,
+              result: .failure(MappingError()),
+              timeline: response.timeline
+            )
+            completion(newResponse)
           }
 
         case .failure(let error):
