@@ -7,4 +7,6 @@
 //
 
 struct MappingError: Error {
+  init(from: Any?, to: Any.Type) {
+  }
 }
