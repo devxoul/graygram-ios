@@ -11,18 +11,13 @@ import ObjectMapper
 
 struct FeedService {
 
-  static func feeds(
-    more: Bool,
-    nextURLString: String?,
-    completion: (DataResponse<Void>) -> Void
-  ) {
+  static func feeds(paging: Paging, completion: (DataResponse<Void>) -> Void) {
     let urlString: String
-    if !more {
+    switch paging {
+    case .refresh:
       urlString = "https://api.graygram.com/feed?limit=10"
-    } else if let nextURLString = nextURLString {
+    case .next(let nextURLString):
       urlString = nextURLString
-    } else {
-      return
     }
 
     Alamofire.request(urlString)
