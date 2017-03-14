@@ -11,7 +11,7 @@ import ObjectMapper
 
 struct FeedService {
 
-  static func feeds(paging: Paging, completion: (DataResponse<Void>) -> Void) {
+  static func feeds(paging: Paging, completion: (DataResponse<Feed>) -> Void) {
     let urlString: String
     switch paging {
     case .refresh:
