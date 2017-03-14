@@ -19,7 +19,14 @@ struct UserService {
         switch response.result {
         case .success(let json):
           if let user = Mapper<User>().map(JSONObject: json) {
-            // 성공
+            let newResponse = DataResponse<User>(
+              request: response.request,
+              response: response.response,
+              data: response.data,
+              result: .success(user),
+              timeline: response.timeline
+            )
+            completion(newResponse)
           } else {
             // 실패
           }
