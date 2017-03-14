@@ -32,8 +32,14 @@ struct UserService {
           }
 
         case .failure(let error):
-          // 실패
-          break
+          let newResponse = DataResponse<User>(
+            request: response.request,
+            response: response.response,
+            data: response.data,
+            result: .failure(error),
+            timeline: response.timeline
+          )
+          completion(newResponse)
         }
       }
   }
