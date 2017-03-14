@@ -8,8 +8,6 @@
 
 import UIKit
 
-import Alamofire
-
 final class PostCardCell: UICollectionViewCell {
 
   // MARK: Constants
