@@ -220,27 +220,21 @@ final class PostCardCell: UICollectionViewCell {
       userInfo: ["postID": postID]
     )
 
-    let urlString = "https://api.graygram.com/posts/\(postID)/likes"
-    let headers: HTTPHeaders = [
-      "Accept": "application/json"
-    ]
-    Alamofire.request(urlString, method: .delete, headers: headers)
-      .validate(statusCode: 200..<400)
-      .responseData { response in
-        switch response.result {
-        case .success,
-             .failure where response.response?.statusCode != 409:
-          print("post-\(postID) 좋아요 취소 성공!")
+    PostService.unlike(postID: postID) { response in
+      switch response.result {
+      case .success,
+           .failure where response.response?.statusCode != 409:
+        print("post-\(postID) 좋아요 취소 성공!")
 
-        case .failure:
-          print("post-\(postID) 좋아요 취소 실패 ㅠㅠ")
-          NotificationCenter.default.post(
-            name: .postDidLike,
-            object: self,
-            userInfo: ["postID": postID]
-          )
-        }
+      case .failure:
+        print("post-\(postID) 좋아요 취소 실패 ㅠㅠ")
+        NotificationCenter.default.post(
+          name: .postDidLike,
+          object: self,
+          userInfo: ["postID": postID]
+        )
       }
+    }
   }
 
 
