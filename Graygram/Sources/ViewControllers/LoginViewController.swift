@@ -84,43 +84,30 @@ final class LoginViewController: UIViewController {
     self.loginButton.isEnabled = false
     self.loginButton.alpha = 0.4
 
-    let urlString = "https://api.graygram.com/login/username"
-    let parameters: [String: Any] = [
-      "username": username,
-      "password": password,
-    ]
-    let headers: HTTPHeaders = [
-      "Accept": "application/json",
-    ]
-    Alamofire
-      .request(urlString, method: .post, parameters: parameters, headers: headers)
-      .validate(statusCode: 200..<400)
-      .responseJSON { response in
-        switch response.result {
-        case .success(let value):
-          print("로그인 성공!", value)
-          AppDelegate.instance?.presentMainSreen()
+    AuthService.login(username: username, password: password) { response in
+      switch response.result {
+      case .success:
+        AppDelegate.instance?.presentMainSreen()
 
-        case .failure(let error):
-          print("로그인 실패 ㅠㅠ", error)
+      case .failure(let error):
+        print("로그인 실패 ㅠㅠ", error)
+        self.usernameTextField.isEnabled = true
+        self.passwordTextField.isEnabled = true
+        self.loginButton.isEnabled = true
+        self.loginButton.alpha = 1
 
-          self.usernameTextField.isEnabled = true
-          self.passwordTextField.isEnabled = true
-          self.loginButton.isEnabled = true
-          self.loginButton.alpha = 1
-
-          switch response.errorInfo()?.field {
-          case .some("username"):
-            self.usernameTextField.becomeFirstResponder()
-            self.usernameTextField.backgroundColor = UIColor.red.withAlphaComponent(0.5)
-          case .some("password"):
-            self.passwordTextField.becomeFirstResponder()
-            self.passwordTextField.backgroundColor = UIColor.red.withAlphaComponent(0.5)
-          default:
-            break
-          }
+        switch response.errorInfo()?.field {
+        case .some("username"):
+          self.usernameTextField.becomeFirstResponder()
+          self.usernameTextField.backgroundColor = UIColor.red.withAlphaComponent(0.5)
+        case .some("password"):
+          self.passwordTextField.becomeFirstResponder()
+          self.passwordTextField.backgroundColor = UIColor.red.withAlphaComponent(0.5)
+        default:
+          break
         }
       }
+    }
   }
 
 }
