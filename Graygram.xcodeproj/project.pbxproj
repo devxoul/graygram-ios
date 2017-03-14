@@ -10,6 +10,7 @@
 		030E75F41E585FB60027D94A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E75F31E585FB60027D94A /* LoginViewController.swift */; };
 		030EFD8D1E5B70E900AFBC7C /* Response+ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030EFD8C1E5B70E900AFBC7C /* Response+ErrorInfo.swift */; };
 		030EFD8F1E5B7B0B00AFBC7C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030EFD8E1E5B7B0B00AFBC7C /* SplashViewController.swift */; };
+		036093FA1E77E25A00CB0C36 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036093F91E77E25A00CB0C36 /* UserService.swift */; };
 		03723B211E4F924900B07514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03723B161E4F924900B07514 /* Assets.xcassets */; };
 		03723B221E4F924900B07514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03723B171E4F924900B07514 /* LaunchScreen.storyboard */; };
 		03723B331E4F928700B07514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B2A1E4F928700B07514 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		030E75F31E585FB60027D94A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		030EFD8C1E5B70E900AFBC7C /* Response+ErrorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ErrorInfo.swift"; sourceTree = "<group>"; };
 		030EFD8E1E5B7B0B00AFBC7C /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		036093F91E77E25A00CB0C36 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		03723B161E4F924900B07514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03723B181E4F924900B07514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03723B201E4F924900B07514 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		036093F81E77E18500CB0C36 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				036093F91E77E25A00CB0C36 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		03723B151E4F924900B07514 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 			children = (
 				03723B2A1E4F928700B07514 /* AppDelegate.swift */,
 				030EFD8B1E5B70DE00AFBC7C /* Networking */,
+				036093F81E77E18500CB0C36 /* Services */,
 				03723B3A1E4FA17800B07514 /* Types */,
 				03723B2B1E4F928700B07514 /* Models */,
 				03723B2F1E4F928700B07514 /* ViewControllers */,
@@ -340,6 +351,7 @@
 				03723B3E1E4FA1EB00B07514 /* UIImageView+Photo.swift in Sources */,
 				03A5C51C1E6B310200515C60 /* MainTabBarController.swift in Sources */,
 				03DF95271E6F1DEB00E31665 /* PostEditorImageCell.swift in Sources */,
+				036093FA1E77E25A00CB0C36 /* UserService.swift in Sources */,
 				03723B391E4F969000B07514 /* User.swift in Sources */,
 				03723B351E4F928700B07514 /* String+BoundingRect.swift in Sources */,
 				03723B361E4F928700B07514 /* FeedViewController.swift in Sources */,
