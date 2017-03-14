@@ -16,38 +16,21 @@ struct UserService {
     Alamofire.request(urlString)
       .validate(statusCode: 200..<400)
       .responseJSON { response in
-        switch response.result {
-        case .success(let json):
-          if let user = Mapper<User>().map(JSONObject: json) {
-            let newResponse = DataResponse<User>(
-              request: response.request,
-              response: response.response,
-              data: response.data,
-              result: .success(user),
-              timeline: response.timeline
-            )
-            completion(newResponse)
-          } else {
-            let newResponse = DataResponse<User>(
-              request: response.request,
-              response: response.response,
-              data: response.data,
-              result: .failure(MappingError(from: json, to: User.self)),
-              timeline: response.timeline
-            )
-            completion(newResponse)
-          }
+        let response: DataResponse<User> = response.map { result in
+          switch result {
+          case .success(let json):
+            if let user = Mapper<User>().map(JSONObject: json) {
+              return .success(user)
+            } else {
+              let error = MappingError(from: json, to: User.self)
+              return .failure(error)
+            }
 
-        case .failure(let error):
-          let newResponse = DataResponse<User>(
-            request: response.request,
-            response: response.response,
-            data: response.data,
-            result: .failure(error),
-            timeline: response.timeline
-          )
-          completion(newResponse)
+          case .failure(let error):
+            return .failure(error)
+          }
         }
+        completion(response)
       }
   }
 
