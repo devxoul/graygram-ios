@@ -16,6 +16,7 @@
 		036094041E78616C00CB0C36 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036094031E78616C00CB0C36 /* AuthService.swift */; };
 		036094061E78628B00CB0C36 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036094051E78628B00CB0C36 /* FeedService.swift */; };
 		036094081E7863DC00CB0C36 /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036094071E7863DC00CB0C36 /* Paging.swift */; };
+		0360940A1E78649D00CB0C36 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036094091E78649D00CB0C36 /* Feed.swift */; };
 		03723B211E4F924900B07514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03723B161E4F924900B07514 /* Assets.xcassets */; };
 		03723B221E4F924900B07514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03723B171E4F924900B07514 /* LaunchScreen.storyboard */; };
 		03723B331E4F928700B07514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B2A1E4F928700B07514 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		036094031E78616C00CB0C36 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		036094051E78628B00CB0C36 /* FeedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		036094071E7863DC00CB0C36 /* Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
+		036094091E78649D00CB0C36 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		03723B161E4F924900B07514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03723B181E4F924900B07514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03723B201E4F924900B07514 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				03723B381E4F969000B07514 /* User.swift */,
 				03723B2C1E4F928700B07514 /* Post.swift */,
+				036094091E78649D00CB0C36 /* Feed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				03E0F1011E6CAC800004EFB4 /* UIImage+Grayscaled.swift in Sources */,
 				030EFD8D1E5B70E900AFBC7C /* Response+ErrorInfo.swift in Sources */,
 				036094041E78616C00CB0C36 /* AuthService.swift in Sources */,
+				0360940A1E78649D00CB0C36 /* Feed.swift in Sources */,
 				036094001E785B6700CB0C36 /* MappingError.swift in Sources */,
 				030EFD8F1E5B7B0B00AFBC7C /* SplashViewController.swift in Sources */,
 				03DF95251E6F0B2C00E31665 /* PostEditorViewController.swift in Sources */,
