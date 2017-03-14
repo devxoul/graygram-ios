@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    self.configureAppearance()
+
     let window = UIWindow(frame: UIScreen.main.bounds)
     window.backgroundColor = .white
     window.makeKeyAndVisible()
@@ -36,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     self.window = window
     return true
+  }
+
+  func configureAppearance() {
+
   }
 
   func presentLoginSreen() {
