@@ -10,6 +10,13 @@ import UIKit
 
 final class FeedViewController: UIViewController {
 
+  // MARK: Constants
+
+  fileprivate struct Metric {
+    static let tileCellSpacing = CGFloat(3)
+  }
+
+
   // MARK: Properties
 
   fileprivate var viewMode: FeedViewMode = .card
@@ -198,8 +205,15 @@ extension FeedViewController: UICollectionViewDataSource {
 extension FeedViewController: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let cellWidth = collectionView.frame.width
-    return PostCardCell.size(width: cellWidth, post: self.posts[indexPath.item])
+    let collectionViewWidth = collectionView.frame.width
+    switch self.viewMode {
+    case .card:
+      return PostCardCell.size(width: collectionViewWidth, post: self.posts[indexPath.item])
+
+    case .tile:
+      let cellWidth = round((collectionViewWidth - 2 * Metric.tileCellSpacing) / 3)
+      return PostTileCell.size(width: cellWidth, post: self.posts[indexPath.item])
+    }
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
