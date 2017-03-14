@@ -15,7 +15,7 @@ struct FeedService {
     let urlString: String
     switch paging {
     case .refresh:
-      urlString = "https://api.graygram.com/feed?limit=10"
+      urlString = "https://api.graygram.com/feed"
     case .next(let nextURLString):
       urlString = nextURLString
     }
