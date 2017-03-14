@@ -6,7 +6,12 @@
 //  Copyright © 2017 Suyeol Jeon. All rights reserved.
 //
 
-struct MappingError: Error {
+struct MappingError: Error, CustomStringConvertible {
+
+  let description: String
+
   init(from: Any?, to: Any.Type) {
+    self.description = "Failed to map \(from) to \(to)"
   }
+
 }
