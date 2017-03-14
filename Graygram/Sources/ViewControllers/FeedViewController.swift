@@ -81,18 +81,8 @@ final class FeedViewController: UIViewController {
 
   // MARK: Networking
 
-  fileprivate func fetchFeed(more: Bool = false) {
+  fileprivate func fetchFeed(paging: Paging) {
     guard !self.isLoading else { return }
-
-    let paging: Paging
-    if !more {
-      paging = .refresh
-    } else if let nextURLString = self.nextURLString {
-      paging = .next(nextURLString)
-    } else {
-      return
-    }
-
     self.isLoading = true
 
     FeedService.feed(paging: paging) { [weak self] response in
