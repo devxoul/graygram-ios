@@ -76,12 +76,12 @@ final class FeedViewController: UIViewController {
       make.edges.equalToSuperview()
     }
 
-    self.fetchPosts()
+    self.fetchFeed()
   }
 
   // MARK: Networking
 
-  fileprivate func fetchPosts(more: Bool = false) {
+  fileprivate func fetchFeed(more: Bool = false) {
     guard !self.isLoading else { return }
 
     let paging: Paging
@@ -122,7 +122,7 @@ final class FeedViewController: UIViewController {
   // MARK: Actions
 
   fileprivate dynamic func refreshControlDidChangeValue() {
-    self.fetchPosts()
+    self.fetchFeed()
   }
 
 
@@ -213,7 +213,7 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let contentOffsetBottom = scrollView.contentOffset.y + scrollView.height
     if scrollView.contentSize.height > 0 && contentOffsetBottom >= scrollView.contentSize.height - 300 {
-      self.fetchPosts(more: true)
+      self.fetchFeed(more: true)
     }
   }
 
