@@ -18,6 +18,7 @@
 		036094081E7863DC00CB0C36 /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036094071E7863DC00CB0C36 /* Paging.swift */; };
 		0360940A1E78649D00CB0C36 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036094091E78649D00CB0C36 /* Feed.swift */; };
 		0360940C1E78694900CB0C36 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360940B1E78694900CB0C36 /* PostService.swift */; };
+		0360940E1E78719100CB0C36 /* PostTileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360940D1E78719100CB0C36 /* PostTileCell.swift */; };
 		03723B211E4F924900B07514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03723B161E4F924900B07514 /* Assets.xcassets */; };
 		03723B221E4F924900B07514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03723B171E4F924900B07514 /* LaunchScreen.storyboard */; };
 		03723B331E4F928700B07514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B2A1E4F928700B07514 /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 		036094071E7863DC00CB0C36 /* Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
 		036094091E78649D00CB0C36 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		0360940B1E78694900CB0C36 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		0360940D1E78719100CB0C36 /* PostTileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTileCell.swift; sourceTree = "<group>"; };
 		03723B161E4F924900B07514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03723B181E4F924900B07514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03723B201E4F924900B07514 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				03723B321E4F928700B07514 /* PostCardCell.swift */,
+				0360940D1E78719100CB0C36 /* PostTileCell.swift */,
 				038F0A051E5620F700613148 /* CollectionActivityIndicatorView.swift */,
 				03DF95261E6F1DEB00E31665 /* PostEditorImageCell.swift */,
 				03DF95281E6F200000E31665 /* PostEditorMessageCell.swift */,
@@ -377,6 +380,7 @@
 				03DF95271E6F1DEB00E31665 /* PostEditorImageCell.swift in Sources */,
 				036093FA1E77E25A00CB0C36 /* UserService.swift in Sources */,
 				03723B391E4F969000B07514 /* User.swift in Sources */,
+				0360940E1E78719100CB0C36 /* PostTileCell.swift in Sources */,
 				03723B351E4F928700B07514 /* String+BoundingRect.swift in Sources */,
 				03723B361E4F928700B07514 /* FeedViewController.swift in Sources */,
 				030E75F41E585FB60027D94A /* LoginViewController.swift in Sources */,
