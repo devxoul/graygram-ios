@@ -76,7 +76,7 @@ final class FeedViewController: UIViewController {
       make.edges.equalToSuperview()
     }
 
-    self.fetchFeed()
+    self.fetchFeed(paging: .refresh)
   }
 
   // MARK: Networking
@@ -112,7 +112,7 @@ final class FeedViewController: UIViewController {
   // MARK: Actions
 
   fileprivate dynamic func refreshControlDidChangeValue() {
-    self.fetchFeed()
+    self.fetchFeed(paging: .refresh)
   }
 
 
@@ -202,8 +202,10 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
 
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let contentOffsetBottom = scrollView.contentOffset.y + scrollView.height
-    if scrollView.contentSize.height > 0 && contentOffsetBottom >= scrollView.contentSize.height - 300 {
-      self.fetchFeed(more: true)
+    let didReachBottom = scrollView.contentSize.height > 0
+      && contentOffsetBottom >= scrollView.contentSize.height - 300
+    if let nextURLString = self.nextURLString, didReachBottom{
+      self.fetchFeed(paging: .next(nextURLString))
     }
   }
 
