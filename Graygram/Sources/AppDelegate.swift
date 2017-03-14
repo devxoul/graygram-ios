@@ -41,7 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func configureAppearance() {
-
+    UINavigationBar.appearance().tintColor = .black
+    UIBarButtonItem.appearance().tintColor = .black
+    UITabBar.appearance().tintColor = .black
   }
 
   func presentLoginSreen() {
