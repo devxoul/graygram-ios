@@ -32,7 +32,7 @@ struct UserService {
               request: response.request,
               response: response.response,
               data: response.data,
-              result: .failure(MappingError()),
+              result: .failure(MappingError(from: json, to: User.self)),
               timeline: response.timeline
             )
             completion(newResponse)
