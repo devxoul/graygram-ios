@@ -244,6 +244,10 @@ final class PostCardCell: UICollectionViewCell {
 
   // MARK: Actions
 
+  func photoViewDidTap() {
+    self.didTap?()
+  }
+
   func likeButtonDidTap() {
     if !self.likeButton.isSelected {
       self.like()
