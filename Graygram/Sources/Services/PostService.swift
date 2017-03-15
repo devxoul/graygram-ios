@@ -61,6 +61,25 @@ struct PostService {
     )
   }
 
+  static func post(id: Int, completion: @escaping (DataResponse<Post>) -> Void) {
+    let urlString = "https://api.graygram.com/posts/\(id)"
+    let headers: HTTPHeaders = [
+      "Accept": "application/json"
+    ]
+    Alamofire.request(urlString, method: .get, headers: headers)
+      .validate(statusCode: 200..<400)
+      .responseJSON { response in
+        let response: DataResponse<Post> = response.flatMap { json in
+          if let post = Mapper<Post>().map(JSONObject: json) {
+            return .success(post)
+          } else {
+            return .failure(MappingError(from: json, to: Post.self))
+          }
+        }
+        completion(response)
+      }
+  }
+
   static func like(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
     let urlString = "https://api.graygram.com/posts/\(postID)/likes"
     let headers: HTTPHeaders = [
