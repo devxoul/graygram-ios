@@ -15,9 +15,14 @@ final class PostTileCell: UICollectionViewCell {
     $0.isUserInteractionEnabled = true
   }
 
+  fileprivate let photoViewTapRecognizer = UITapGestureRecognizer()
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     self.contentView.addSubview(self.photoView)
+
+    self.photoViewTapRecognizer.addTarget(self, action: #selector(photoViewDidTap))
+    self.photoView.addGestureRecognizer(self.photoViewTapRecognizer)
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -44,6 +49,13 @@ final class PostTileCell: UICollectionViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
     self.photoView.frame = self.contentView.bounds
+  }
+
+
+  // MARK: Actions
+
+  func photoViewDidTap() {
+    
   }
 
 }
