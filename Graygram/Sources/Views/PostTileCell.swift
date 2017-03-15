@@ -10,6 +10,8 @@ import UIKit
 
 final class PostTileCell: UICollectionViewCell {
 
+  var didTap: (() -> Void)?
+
   fileprivate let photoView = UIImageView().then {
     $0.backgroundColor = .lightGray
     $0.isUserInteractionEnabled = true
@@ -55,7 +57,7 @@ final class PostTileCell: UICollectionViewCell {
   // MARK: Actions
 
   func photoViewDidTap() {
-    
+    self.didTap?()
   }
 
 }
