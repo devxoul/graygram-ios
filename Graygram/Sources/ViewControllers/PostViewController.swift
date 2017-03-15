@@ -45,6 +45,10 @@ final class PostViewController: UIViewController {
     self.collectionView.delegate = self
 
     self.view.addSubview(self.collectionView)
+
+    self.collectionView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
   }
 
 }
