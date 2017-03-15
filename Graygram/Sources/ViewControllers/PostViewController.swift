@@ -66,6 +66,11 @@ extension PostViewController: UICollectionViewDataSource {
     }
   }
 
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! PostCardCell
+    return cell
+  }
+
 }
 
 extension PostViewController: UICollectionViewDelegateFlowLayout {
