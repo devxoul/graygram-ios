@@ -21,7 +21,9 @@ final class PostViewController: UIViewController {
   fileprivate let collectionView = UICollectionView(
     frame: .zero,
     collectionViewLayout: UICollectionViewFlowLayout()
-  )
+  ).then {
+    $0.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
+  }
 
 
   // MARK: Initializing
