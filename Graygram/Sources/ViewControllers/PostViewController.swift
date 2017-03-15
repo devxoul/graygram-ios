@@ -55,6 +55,9 @@ final class PostViewController: UIViewController {
       make.edges.equalToSuperview()
     }
 
+    NotificationCenter.default.addObserver(self, selector: #selector(postDidLike), name: .postDidLike, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(postDidUnlike), name: .postDidUnlike, object: nil)
+
     self.fetchPost()
   }
 
@@ -74,6 +77,25 @@ final class PostViewController: UIViewController {
       }
       self.collectionView.reloadData()
     }
+  }
+
+
+  // MARK: Notification
+
+  func postDidLike(_ notification: Notification) {
+    guard var post = self.post else { return }
+    post.likeCount! += 1
+    post.isLiked = true
+    self.post = post
+    self.collectionView.reloadData()
+  }
+
+  func postDidUnlike(_ notification: Notification) {
+    guard var post = self.post else { return }
+    post.likeCount! -= 1
+    post.isLiked = false
+    self.post = post
+    self.collectionView.reloadData()
   }
 
 }
