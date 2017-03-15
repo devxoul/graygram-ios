@@ -94,6 +94,14 @@ final class PostViewController: UIViewController {
   }
 
 
+  // MARK: Utils
+
+  fileprivate func setErrorViewHidden(_ hidden: Bool) {
+    self.errorMessageLabel.isHidden = hidden
+    self.refreshButton.isHidden = hidden
+  }
+
+
   // MARK: Notification
 
   func postDidLike(_ notification: Notification) {
