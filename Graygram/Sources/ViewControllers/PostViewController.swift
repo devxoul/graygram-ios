@@ -56,6 +56,14 @@ final class PostViewController: UIViewController {
 
 extension PostViewController: UICollectionViewDataSource {
 
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    if self.post == nil {
+      return 0
+    } else {
+      return 1
+    }
+  }
+
 }
 
 extension PostViewController: UICollectionViewDelegateFlowLayout {
