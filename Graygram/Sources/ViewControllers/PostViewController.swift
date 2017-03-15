@@ -70,17 +70,22 @@ final class PostViewController: UIViewController {
   // MARK: Networking
 
   func fetchPost() {
+    self.activityIndicatorView.startAnimating()
+    self.collectionView.isHidden = true
+
     PostService.post(id: self.postID) { [weak self] response in
       guard let `self` = self else { return }
       switch response.result {
       case .success(let post):
         print("Post 요청 성공! \(post)")
         self.post = post
+        self.activityIndicatorView.stopAnimating()
+        self.collectionView.isHidden = false
+        self.collectionView.reloadData()
 
       case .failure(let error):
         print("Post 요청 실패 ㅠㅠ \(error)")
       }
-      self.collectionView.reloadData()
     }
   }
 
