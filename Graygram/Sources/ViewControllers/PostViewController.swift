@@ -100,6 +100,10 @@ extension PostViewController: UICollectionViewDataSource {
 
 extension PostViewController: UICollectionViewDelegateFlowLayout {
 
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+  }
+
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     guard let post = self.post else { return .zero }
     return PostCardCell.size(width: collectionView.width, post: post)
