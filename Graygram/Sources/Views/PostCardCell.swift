@@ -46,6 +46,7 @@ final class PostCardCell: UICollectionViewCell {
   // MARK: Properties
 
   fileprivate var post: Post?
+  var didTap: (() -> Void)?
 
 
   // MARK: UI
