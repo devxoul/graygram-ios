@@ -298,10 +298,4 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     return CGSize(width: collectionView.width, height: height)
   }
 
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let post = self.posts[indexPath.item]
-    let postViewController = PostViewController(postID: post.id, post: post)
-    self.navigationController?.pushViewController(postViewController, animated: true)
-  }
-
 }
