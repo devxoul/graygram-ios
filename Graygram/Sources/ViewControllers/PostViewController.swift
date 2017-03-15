@@ -28,7 +28,9 @@ final class PostViewController: UIViewController {
     $0.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
   }
   fileprivate let errorMessageLabel = UILabel()
-  fileprivate let refreshButton = UIButton()
+  fileprivate let refreshButton = UIButton(type: .system).then {
+    $0.setTitle("새로고침", for: .normal)
+  }
 
 
   // MARK: Initializing
