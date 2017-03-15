@@ -52,6 +52,8 @@ final class PostViewController: UIViewController {
     self.collectionView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
+
+    self.fetchPost()
   }
 
 
