@@ -63,6 +63,14 @@ final class PostViewController: UIViewController {
     self.collectionView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
+    self.errorMessageLabel.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.centerY.equalToSuperview().offset(-10)
+    }
+    self.refreshButton.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.centerY.equalToSuperview().offset(10)
+    }
 
     NotificationCenter.default.addObserver(self, selector: #selector(postDidLike), name: .postDidLike, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(postDidUnlike), name: .postDidUnlike, object: nil)
