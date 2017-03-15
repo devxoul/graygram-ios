@@ -214,6 +214,10 @@ extension FeedViewController: UICollectionViewDataSource {
     case .card:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! PostCardCell
       cell.configure(post: post)
+      cell.didTap = { [weak self] in
+        let postViewController = PostViewController(postID: post.id, post: post)
+        self?.navigationController?.pushViewController(postViewController, animated: true)
+      }
       return cell
 
     case .tile:
