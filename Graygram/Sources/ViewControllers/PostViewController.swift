@@ -84,6 +84,7 @@ final class PostViewController: UIViewController {
   // MARK: Networking
 
   func fetchPost() {
+    self.setErrorViewHidden(true)
     self.activityIndicatorView.startAnimating()
     self.collectionView.isHidden = true
 
