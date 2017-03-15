@@ -10,6 +10,17 @@ import UIKit
 
 final class PostViewController: UIViewController {
 
+  // MARK: Initializing
+
+  init(postID: Int, post: Post? = nil) {
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+
   // MARK: View Life Cycle
 
   override func viewDidLoad() {
