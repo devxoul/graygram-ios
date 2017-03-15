@@ -75,6 +75,8 @@ final class PostCardCell: UICollectionViewCell {
     $0.font = Font.messageLabel
   }
 
+  fileprivate let photoViewTapRecognizer = UITapGestureRecognizer()
+
 
   // MARK: Initializing
 
@@ -89,6 +91,9 @@ final class PostCardCell: UICollectionViewCell {
     self.contentView.addSubview(self.likeButton)
     self.contentView.addSubview(self.likeCountLabel)
     self.contentView.addSubview(self.messageLabel)
+
+    self.photoViewTapRecognizer.addTarget(self, action: #selector(photoViewDidTap))
+    self.photoView.addGestureRecognizer(self.photoViewTapRecognizer)
   }
   
   required init?(coder aDecoder: NSCoder) {
