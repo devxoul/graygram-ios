@@ -15,6 +15,14 @@ final class PostViewController: UIViewController {
   fileprivate let postID: Int
 
 
+  // MARK: UI
+
+  fileprivate let collectionView = UICollectionView(
+    frame: .zero,
+    collectionViewLayout: UICollectionViewFlowLayout()
+  )
+
+
   // MARK: Initializing
 
   init(postID: Int, post: Post? = nil) {
@@ -32,6 +40,19 @@ final class PostViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = .white
+
+    self.collectionView.dataSource = self
+    self.collectionView.delegate = self
+
+    self.view.addSubview(self.collectionView)
   }
+
+}
+
+extension PostViewController: UICollectionViewDataSource {
+
+}
+
+extension PostViewController: UICollectionViewDelegateFlowLayout {
 
 }
