@@ -20,6 +20,7 @@
 		0360940C1E78694900CB0C36 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360940B1E78694900CB0C36 /* PostService.swift */; };
 		0360940E1E78719100CB0C36 /* PostTileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360940D1E78719100CB0C36 /* PostTileCell.swift */; };
 		036094101E78728300CB0C36 /* FeedViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0360940F1E78728300CB0C36 /* FeedViewMode.swift */; };
+		036094121E7932AF00CB0C36 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036094111E7932AF00CB0C36 /* PostViewController.swift */; };
 		03723B211E4F924900B07514 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03723B161E4F924900B07514 /* Assets.xcassets */; };
 		03723B221E4F924900B07514 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03723B171E4F924900B07514 /* LaunchScreen.storyboard */; };
 		03723B331E4F928700B07514 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B2A1E4F928700B07514 /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 		0360940B1E78694900CB0C36 /* PostService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		0360940D1E78719100CB0C36 /* PostTileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTileCell.swift; sourceTree = "<group>"; };
 		0360940F1E78728300CB0C36 /* FeedViewMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewMode.swift; sourceTree = "<group>"; };
+		036094111E7932AF00CB0C36 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		03723B161E4F924900B07514 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03723B181E4F924900B07514 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03723B201E4F924900B07514 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				03A5C51B1E6B310200515C60 /* MainTabBarController.swift */,
 				030E75F31E585FB60027D94A /* LoginViewController.swift */,
 				03723B301E4F928700B07514 /* FeedViewController.swift */,
+				036094111E7932AF00CB0C36 /* PostViewController.swift */,
 				03E0F0FE1E6C90760004EFB4 /* ImageCropViewController.swift */,
 				03DF95241E6F0B2C00E31665 /* PostEditorViewController.swift */,
 			);
@@ -278,6 +281,7 @@
 				TargetAttributes = {
 					03E16E681E464B4F0061E685 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N2C267LBVY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -393,6 +397,7 @@
 				036094101E78728300CB0C36 /* FeedViewMode.swift in Sources */,
 				036094061E78628B00CB0C36 /* FeedService.swift in Sources */,
 				036094021E785CC000CB0C36 /* DataResponse+MapResult.swift in Sources */,
+				036094121E7932AF00CB0C36 /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +511,7 @@
 			baseConfigurationReference = 2615165B4186F1C5887786B7 /* Pods-Graygram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N2C267LBVY;
 				INFOPLIST_FILE = "$(SRCROOT)/Graygram/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.Graygram;
@@ -519,6 +525,7 @@
 			baseConfigurationReference = 4024640E30E4004B5C157283 /* Pods-Graygram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N2C267LBVY;
 				INFOPLIST_FILE = "$(SRCROOT)/Graygram/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.Graygram;
