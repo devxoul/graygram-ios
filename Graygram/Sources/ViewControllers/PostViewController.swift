@@ -100,6 +100,7 @@ final class PostViewController: UIViewController {
 
       case .failure(let error):
         print("Post 요청 실패 ㅠㅠ \(error)")
+        self.errorMessageLabel.text = error.localizedDescription
         self.activityIndicatorView.stopAnimating()
         self.setErrorViewHidden(false)
       }
