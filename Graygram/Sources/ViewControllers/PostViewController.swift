@@ -77,7 +77,7 @@ final class PostViewController: UIViewController {
     self.activityIndicatorView.startAnimating()
     self.collectionView.isHidden = true
 
-    PostService.post(id: self.postID) { [weak self] response in
+    PostService.post(id: 0) { [weak self] response in
       guard let `self` = self else { return }
       switch response.result {
       case .success(let post):
@@ -89,6 +89,8 @@ final class PostViewController: UIViewController {
 
       case .failure(let error):
         print("Post 요청 실패 ㅠㅠ \(error)")
+        self.activityIndicatorView.stopAnimating()
+        self.setErrorViewHidden(false)
       }
     }
   }
