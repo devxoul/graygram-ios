@@ -27,6 +27,8 @@ final class PostViewController: UIViewController {
     $0.alwaysBounceVertical = true
     $0.register(PostCardCell.self, forCellWithReuseIdentifier: "cardCell")
   }
+  fileprivate let errorMessageLabel = UILabel()
+  fileprivate let refreshButton = UIButton()
 
 
   // MARK: Initializing
@@ -52,6 +54,8 @@ final class PostViewController: UIViewController {
 
     self.view.addSubview(self.activityIndicatorView)
     self.view.addSubview(self.collectionView)
+    self.view.addSubview(self.errorMessageLabel)
+    self.view.addSubview(self.refreshButton)
 
     self.activityIndicatorView.snp.makeConstraints { make in
       make.center.equalToSuperview()
