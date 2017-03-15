@@ -13,6 +13,7 @@ final class PostViewController: UIViewController {
   // MARK: Properties
 
   fileprivate let postID: Int
+  fileprivate var post: Post?
 
 
   // MARK: UI
