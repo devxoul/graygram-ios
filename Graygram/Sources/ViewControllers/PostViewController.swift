@@ -69,11 +69,11 @@ final class PostViewController: UIViewController {
     }
     self.errorMessageLabel.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.centerY.equalToSuperview().offset(-10)
+      make.centerY.equalToSuperview().offset(-15)
     }
     self.refreshButton.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.centerY.equalToSuperview().offset(10)
+      make.centerY.equalToSuperview().offset(15)
     }
 
     NotificationCenter.default.addObserver(self, selector: #selector(postDidLike), name: .postDidLike, object: nil)
