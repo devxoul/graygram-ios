@@ -10,9 +10,15 @@ import UIKit
 
 final class PostViewController: UIViewController {
 
+  // MARK: Properties
+
+  fileprivate let postID: Int
+
+
   // MARK: Initializing
 
   init(postID: Int, post: Post? = nil) {
+    self.postID = postID
     super.init(nibName: nil, bundle: nil)
   }
   
