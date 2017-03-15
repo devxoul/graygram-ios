@@ -54,6 +54,8 @@ final class PostViewController: UIViewController {
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
 
+    self.refreshButton.addTarget(self, action: #selector(fetchPost), for: .touchUpInside)
+
     self.view.addSubview(self.activityIndicatorView)
     self.view.addSubview(self.collectionView)
     self.view.addSubview(self.errorMessageLabel)
@@ -88,7 +90,7 @@ final class PostViewController: UIViewController {
     self.activityIndicatorView.startAnimating()
     self.collectionView.isHidden = true
 
-    PostService.post(id: 0) { [weak self] response in
+    PostService.post(id: self.postID) { [weak self] response in
       guard let `self` = self else { return }
       switch response.result {
       case .success(let post):
