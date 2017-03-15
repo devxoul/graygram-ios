@@ -18,6 +18,7 @@ final class PostViewController: UIViewController {
 
   // MARK: UI
 
+  fileprivate let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
   fileprivate let collectionView = UICollectionView(
     frame: .zero,
     collectionViewLayout: UICollectionViewFlowLayout()
@@ -49,8 +50,12 @@ final class PostViewController: UIViewController {
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
 
+    self.view.addSubview(self.activityIndicatorView)
     self.view.addSubview(self.collectionView)
 
+    self.activityIndicatorView.snp.makeConstraints { make in
+      make.center.equalToSuperview()
+    }
     self.collectionView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
