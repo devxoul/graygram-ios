@@ -213,7 +213,7 @@ extension FeedViewController: UICollectionViewDataSource {
     switch self.viewMode {
     case .card:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! PostCardCell
-      cell.configure(post: post)
+      cell.configure(post: post, isMessageTrimmed: true)
       cell.didTap = { [weak self] in
         let postViewController = PostViewController(postID: post.id, post: post)
         self?.navigationController?.pushViewController(postViewController, animated: true)
