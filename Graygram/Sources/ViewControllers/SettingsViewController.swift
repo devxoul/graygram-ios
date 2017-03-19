@@ -85,6 +85,7 @@ extension SettingsViewController: UITableViewDataSource {
     let cellData = self.cellData(for: sectionItem)
     cell.textLabel?.text = cellData.text
     cell.detailTextLabel?.text = cellData.detailText
+    cell.accessoryType = .disclosureIndicator
     return cell
   }
 
