@@ -11,6 +11,7 @@ import UIKit
 final class MainTabBarController: UITabBarController {
 
   let feedViewController = FeedViewController()
+  let settingsViewController = SettingsViewController()
 
   /// 업로드 버튼을 할 가짜 뷰 컨트롤러. 실제로 선택되지는 않습니다.
   let fakeUploadViewController = UIViewController().then {
@@ -25,6 +26,7 @@ final class MainTabBarController: UITabBarController {
 
     self.viewControllers = [
       UINavigationController(rootViewController: self.feedViewController),
+      UINavigationController(rootViewController: self.settingsViewController),
       self.fakeUploadViewController,
     ]
   }
