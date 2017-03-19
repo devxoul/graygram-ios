@@ -16,6 +16,7 @@ final class SettingsViewController: UIViewController {
 
   fileprivate enum SectionItem {
     case version
+    case openSource
     case logout
   }
 
@@ -25,8 +26,13 @@ final class SettingsViewController: UIViewController {
   }
 
   fileprivate var sections: [Section] = [
-    Section(items: [.version]),
-    Section(items: [.logout]),
+    Section(items: [
+      .version,
+      .openSource,
+    ]),
+    Section(items: [
+      .logout,
+    ]),
   ]
 
   fileprivate let tableView = UITableView(frame: .zero, style: .grouped).then {
@@ -61,6 +67,9 @@ final class SettingsViewController: UIViewController {
     switch sectionItem {
     case .version:
       return CellData(text: "현재 버전", detailText: "0.0.0")
+
+    case .openSource:
+      return CellData(text: "오픈소스 라이센스", detailText: nil)
 
     case .logout:
       return CellData(text: "로그아웃", detailText: nil)
