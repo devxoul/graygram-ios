@@ -132,6 +132,9 @@ extension SettingsViewController: UITableViewDelegate {
         message: nil,
         preferredStyle: .actionSheet
       )
+      actionSheet.addAction(UIAlertAction(title: "로그아웃", style: .destructive) { _ in
+      })
+      actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
       self.present(actionSheet, animated: true, completion: nil)
     }
   }
