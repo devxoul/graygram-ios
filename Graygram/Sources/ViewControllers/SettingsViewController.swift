@@ -10,6 +10,15 @@ import UIKit
 
 final class SettingsViewController: UIViewController {
 
+  fileprivate struct Section {
+    let items: [SectionItem]
+  }
+
+  fileprivate enum SectionItem {
+    case version
+    case logout
+  }
+
   fileprivate let tableView = UITableView(frame: .zero, style: .grouped)
 
   init() {
