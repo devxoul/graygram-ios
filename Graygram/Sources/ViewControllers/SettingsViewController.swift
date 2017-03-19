@@ -65,7 +65,17 @@ extension SettingsViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return UITableViewCell()
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    let sectionItem = self.sections[indexPath.section].items[indexPath.row]
+    switch sectionItem {
+    case .version:
+      cell.textLabel?.text = "현재 버전"
+      cell.detailTextLabel?.text = "0.0.0"
+
+    case .logout:
+      cell.textLabel?.text = "로그아웃"
+    }
+    return cell
   }
 
 }
