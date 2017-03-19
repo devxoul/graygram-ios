@@ -19,6 +19,11 @@ final class SettingsViewController: UIViewController {
     case logout
   }
 
+  fileprivate struct CellData {
+    var text: String
+    var detailText: String?
+  }
+
   fileprivate var sections: [Section] = [
     Section(items: [.version]),
     Section(items: [.logout]),
