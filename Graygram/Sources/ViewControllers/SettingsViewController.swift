@@ -17,6 +17,7 @@ final class SettingsViewController: UIViewController {
   fileprivate enum SectionItem {
     case version
     case openSource
+    case icons
     case logout
   }
 
@@ -29,6 +30,7 @@ final class SettingsViewController: UIViewController {
     Section(items: [
       .version,
       .openSource,
+      .icons
     ]),
     Section(items: [
       .logout,
@@ -70,6 +72,9 @@ final class SettingsViewController: UIViewController {
 
     case .openSource:
       return CellData(text: "오픈소스 라이센스", detailText: nil)
+
+    case .icons:
+      return CellData(text: "아이콘 출처", detailText: "icons8.com")
 
     case .logout:
       return CellData(text: "로그아웃", detailText: nil)
