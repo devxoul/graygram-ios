@@ -10,6 +10,7 @@
 		030E75F41E585FB60027D94A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E75F31E585FB60027D94A /* LoginViewController.swift */; };
 		030EFD8D1E5B70E900AFBC7C /* Response+ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030EFD8C1E5B70E900AFBC7C /* Response+ErrorInfo.swift */; };
 		030EFD8F1E5B7B0B00AFBC7C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030EFD8E1E5B7B0B00AFBC7C /* SplashViewController.swift */; };
+		03425BA31E7F0939005FF80E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03425BA21E7F0939005FF80E /* SettingsViewController.swift */; };
 		036093FA1E77E25A00CB0C36 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036093F91E77E25A00CB0C36 /* UserService.swift */; };
 		036094001E785B6700CB0C36 /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036093FF1E785B6700CB0C36 /* MappingError.swift */; };
 		036094021E785CC000CB0C36 /* DataResponse+MapResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036094011E785CC000CB0C36 /* DataResponse+MapResult.swift */; };
@@ -46,6 +47,7 @@
 		030E75F31E585FB60027D94A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		030EFD8C1E5B70E900AFBC7C /* Response+ErrorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ErrorInfo.swift"; sourceTree = "<group>"; };
 		030EFD8E1E5B7B0B00AFBC7C /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		03425BA21E7F0939005FF80E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		036093F91E77E25A00CB0C36 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		036093FF1E785B6700CB0C36 /* MappingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingError.swift; sourceTree = "<group>"; };
 		036094011E785CC000CB0C36 /* DataResponse+MapResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataResponse+MapResult.swift"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				036094111E7932AF00CB0C36 /* PostViewController.swift */,
 				03E0F0FE1E6C90760004EFB4 /* ImageCropViewController.swift */,
 				03DF95241E6F0B2C00E31665 /* PostEditorViewController.swift */,
+				03425BA21E7F0939005FF80E /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				03723B361E4F928700B07514 /* FeedViewController.swift in Sources */,
 				030E75F41E585FB60027D94A /* LoginViewController.swift in Sources */,
 				03723B341E4F928700B07514 /* Post.swift in Sources */,
+				03425BA31E7F0939005FF80E /* SettingsViewController.swift in Sources */,
 				036094081E7863DC00CB0C36 /* Paging.swift in Sources */,
 				0360940C1E78694900CB0C36 /* PostService.swift in Sources */,
 				036094101E78728300CB0C36 /* FeedViewMode.swift in Sources */,
