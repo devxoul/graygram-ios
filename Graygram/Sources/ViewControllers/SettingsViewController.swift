@@ -68,7 +68,9 @@ final class SettingsViewController: UIViewController {
   fileprivate func cellData(for sectionItem: SectionItem) -> CellData {
     switch sectionItem {
     case .version:
-      return CellData(text: "현재 버전", detailText: "0.0.0")
+      let versionKey = "CFBundleShortVersionString"
+      let version = Bundle.main.object(forInfoDictionaryKey: versionKey) as? String
+      return CellData(text: "현재 버전", detailText: version)
 
     case .openSource:
       return CellData(text: "오픈소스 라이센스", detailText: nil)
