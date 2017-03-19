@@ -72,7 +72,6 @@ final class PostCardCell: UICollectionViewCell {
   }
 
   fileprivate let messageLabel = UILabel().then {
-    $0.numberOfLines = Constant.messageLabelNumberOfLines
     $0.font = Font.messageLabel
   }
 
@@ -104,7 +103,7 @@ final class PostCardCell: UICollectionViewCell {
 
   // MARK: Configuring
 
-  func configure(post: Post) {
+  func configure(post: Post, isMessageTrimmed: Bool) {
     self.post = post
     self.userPhotoView.setImage(with: post.user.photoID, size: .tiny)
     self.usernameLabel.text = post.user.username
@@ -112,6 +111,7 @@ final class PostCardCell: UICollectionViewCell {
     self.likeButton.isSelected = post.isLiked
     self.configureLikeCountLabel()
     self.messageLabel.text = post.message
+    self.messageLabel.numberOfLines = isMessageTrimmed ? Constant.messageLabelNumberOfLines : 0
     self.messageLabel.isHidden = post.message?.isEmpty != false
     self.setNeedsLayout()
   }
