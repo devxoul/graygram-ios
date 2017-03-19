@@ -24,7 +24,9 @@ final class SettingsViewController: UIViewController {
     Section(items: [.logout]),
   ]
 
-  fileprivate let tableView = UITableView(frame: .zero, style: .grouped)
+  fileprivate let tableView = UITableView(frame: .zero, style: .grouped).then {
+    $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+  }
 
   init() {
     super.init(nibName: nil, bundle: nil)
