@@ -56,8 +56,8 @@ final class PostViewController: UIViewController {
 
     self.refreshButton.addTarget(self, action: #selector(fetchPost), for: .touchUpInside)
 
-    self.view.addSubview(self.activityIndicatorView)
     self.view.addSubview(self.collectionView)
+    self.view.addSubview(self.activityIndicatorView)
     self.view.addSubview(self.errorMessageLabel)
     self.view.addSubview(self.refreshButton)
 
