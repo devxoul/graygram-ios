@@ -19,6 +19,11 @@ final class SettingsViewController: UIViewController {
     case logout
   }
 
+  fileprivate var sections: [Section] = [
+    Section(items: [.version]),
+    Section(items: [.logout]),
+  ]
+
   fileprivate let tableView = UITableView(frame: .zero, style: .grouped)
 
   init() {
