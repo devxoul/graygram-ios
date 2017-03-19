@@ -255,7 +255,11 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
     let collectionViewWidth = collectionView.frame.width
     switch self.viewMode {
     case .card:
-      return PostCardCell.size(width: collectionViewWidth, post: self.posts[indexPath.item])
+      return PostCardCell.size(
+        width: collectionViewWidth,
+        post: self.posts[indexPath.item],
+        isMessageTrimmed: true
+      )
 
     case .tile:
       let cellWidth = round((collectionViewWidth - 2 * Metric.tileCellSpacing) / 3)

@@ -166,7 +166,7 @@ extension PostViewController: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     guard let post = self.post else { return .zero }
-    return PostCardCell.size(width: collectionView.width, post: post)
+    return PostCardCell.size(width: collectionView.width, post: post, isMessageTrimmed: false)
   }
 
 }

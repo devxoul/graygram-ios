@@ -128,7 +128,7 @@ final class PostCardCell: UICollectionViewCell {
 
   // MARK: Size
 
-  class func size(width: CGFloat, post: Post) -> CGSize {
+  class func size(width: CGFloat, post: Post, isMessageTrimmed: Bool) -> CGSize {
     var height: CGFloat = 0
     height += Metric.userPhotoViewSize
     height += Metric.photoViewTop
@@ -138,10 +138,11 @@ final class PostCardCell: UICollectionViewCell {
     height += Metric.likeButtonSize
 
     if let message = post.message, !message.isEmpty {
+      let numberOfLines = isMessageTrimmed ? Constant.messageLabelNumberOfLines : 0
       let messageLabelSize = message.size(
         width: width - Metric.messageLabelLeft - Metric.messageLabelRight,
         font: Font.messageLabel,
-        numberOfLines: Constant.messageLabelNumberOfLines
+        numberOfLines: numberOfLines
       )
       height += Metric.messageLabelTop
       height += messageLabelSize.height // messageLabel height
