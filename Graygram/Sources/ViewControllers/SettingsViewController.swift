@@ -6,6 +6,7 @@
 //  Copyright © 2017 Suyeol Jeon. All rights reserved.
 //
 
+import SafariServices
 import UIKit
 
 final class SettingsViewController: UIViewController {
@@ -121,7 +122,9 @@ extension SettingsViewController: UITableViewDelegate {
       break
 
     case .icons:
-      break
+      let url = URL(string: "https://icons8.com")!
+      let viewController = SFSafariViewController(url: url)
+      self.present(viewController, animated: true, completion: nil)
 
     case .logout:
       break
