@@ -127,7 +127,12 @@ extension SettingsViewController: UITableViewDelegate {
       self.present(viewController, animated: true, completion: nil)
 
     case .logout:
-      break
+      let actionSheet = UIAlertController(
+        title: "로그아웃 하시겠습니까?",
+        message: nil,
+        preferredStyle: .actionSheet
+      )
+      self.present(actionSheet, animated: true, completion: nil)
     }
   }
 
