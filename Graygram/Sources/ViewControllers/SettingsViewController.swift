@@ -110,6 +110,22 @@ extension SettingsViewController: UITableViewDataSource {
 
 extension SettingsViewController: UITableViewDelegate {
 
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: false)
+    let sectionItem = self.sections[indexPath.section].items[indexPath.row]
+    switch sectionItem {
+    case .version:
+      break
 
+    case .openSource:
+      break
+
+    case .icons:
+      break
+
+    case .logout:
+      break
+    }
+  }
 
 }
