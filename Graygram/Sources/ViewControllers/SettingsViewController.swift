@@ -30,7 +30,7 @@ final class SettingsViewController: UIViewController {
   ]
 
   fileprivate let tableView = UITableView(frame: .zero, style: .grouped).then {
-    $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    $0.register(SettingsCell.self, forCellReuseIdentifier: "cell")
   }
 
   init() {
