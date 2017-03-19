@@ -11,6 +11,7 @@
 		030EFD8D1E5B70E900AFBC7C /* Response+ErrorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030EFD8C1E5B70E900AFBC7C /* Response+ErrorInfo.swift */; };
 		030EFD8F1E5B7B0B00AFBC7C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030EFD8E1E5B7B0B00AFBC7C /* SplashViewController.swift */; };
 		03425BA31E7F0939005FF80E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03425BA21E7F0939005FF80E /* SettingsViewController.swift */; };
+		03425BA51E7F0CBE005FF80E /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03425BA41E7F0CBE005FF80E /* SettingsCell.swift */; };
 		036093FA1E77E25A00CB0C36 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036093F91E77E25A00CB0C36 /* UserService.swift */; };
 		036094001E785B6700CB0C36 /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036093FF1E785B6700CB0C36 /* MappingError.swift */; };
 		036094021E785CC000CB0C36 /* DataResponse+MapResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036094011E785CC000CB0C36 /* DataResponse+MapResult.swift */; };
@@ -48,6 +49,7 @@
 		030EFD8C1E5B70E900AFBC7C /* Response+ErrorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ErrorInfo.swift"; sourceTree = "<group>"; };
 		030EFD8E1E5B7B0B00AFBC7C /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		03425BA21E7F0939005FF80E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		03425BA41E7F0CBE005FF80E /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		036093F91E77E25A00CB0C36 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		036093FF1E785B6700CB0C36 /* MappingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingError.swift; sourceTree = "<group>"; };
 		036094011E785CC000CB0C36 /* DataResponse+MapResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataResponse+MapResult.swift"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				038F0A051E5620F700613148 /* CollectionActivityIndicatorView.swift */,
 				03DF95261E6F1DEB00E31665 /* PostEditorImageCell.swift */,
 				03DF95281E6F200000E31665 /* PostEditorMessageCell.swift */,
+				03425BA41E7F0CBE005FF80E /* SettingsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				03DF95291E6F200000E31665 /* PostEditorMessageCell.swift in Sources */,
 				03E0F1011E6CAC800004EFB4 /* UIImage+Grayscaled.swift in Sources */,
 				030EFD8D1E5B70E900AFBC7C /* Response+ErrorInfo.swift in Sources */,
+				03425BA51E7F0CBE005FF80E /* SettingsCell.swift in Sources */,
 				036094041E78616C00CB0C36 /* AuthService.swift in Sources */,
 				0360940A1E78649D00CB0C36 /* Feed.swift in Sources */,
 				036094001E785B6700CB0C36 /* MappingError.swift in Sources */,
