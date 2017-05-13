@@ -6,6 +6,11 @@
 
 백엔드 코드는 [graygram-web](https://github.com/devxoul/graygram-web) 레파지토리를 참고해주세요.
 
+## 테스트 계정
+
+* ID: `test`
+* PW: `test`
+
 ## 개발 환경 설정
 
 ```console
