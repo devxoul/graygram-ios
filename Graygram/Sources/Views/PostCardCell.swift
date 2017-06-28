@@ -190,19 +190,6 @@ final class PostCardCell: UICollectionViewCell {
   }
 
 
-  // MARK: Networking
-
-  func like() {
-    guard let postID = self.post?.id else { return }
-    PostService.like(postID: postID)
-  }
-
-  func unlike() {
-    guard let post = self.post, let postID = post.id else { return }
-    PostService.unlike(postID: postID)
-  }
-
-
   // MARK: Actions
 
   func photoViewDidTap() {
@@ -210,10 +197,17 @@ final class PostCardCell: UICollectionViewCell {
   }
 
   func likeButtonDidTap() {
+    guard var post = self.post else { return }
     if !self.likeButton.isSelected {
-      self.like()
+      post.likeCount? += 1
+      post.isLiked = true
+      self.configure(post: post, isMessageTrimmed: self.messageLabel.numberOfLines > 0)
+      PostService.like(postID: post.id)
     } else {
-      self.unlike()
+      post.likeCount? -= 1
+      post.isLiked = false
+      self.configure(post: post, isMessageTrimmed: self.messageLabel.numberOfLines > 0)
+      PostService.unlike(postID: post.id)
     }
   }
 

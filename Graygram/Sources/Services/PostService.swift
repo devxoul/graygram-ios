@@ -86,7 +86,7 @@ struct PostService: APIServiceType {
       object: self,
       userInfo: ["postID": postID]
     )
-    let urlString = self.url("/\(postID)/likes")
+    let urlString = self.url("/posts/\(postID)/likes")
     let headers: HTTPHeaders = [
       "Accept": "application/json"
     ]
@@ -107,11 +107,11 @@ struct PostService: APIServiceType {
 
   static func unlike(postID: Int, completion: ((DataResponse<Void>) -> Void)? = nil) {
     NotificationCenter.default.post(
-      name: .postDidLike,
+      name: .postDidUnlike,
       object: self,
       userInfo: ["postID": postID]
     )
-    let urlString = self.url("/\(postID)/likes")
+    let urlString = self.url("/posts/\(postID)/likes")
     let headers: HTTPHeaders = [
       "Accept": "application/json"
     ]
