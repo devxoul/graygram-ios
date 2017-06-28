@@ -23,7 +23,7 @@ struct FeedService: APIServiceType {
     Alamofire.request(urlString)
       .validate(statusCode: 200..<400)
       .responseJSON { response in
-        let response: DataResponse<Feed> = response.flatMap { json in
+        let response: DataResponse<Feed> = response.flatMapResult { json in
           if let feed = Mapper<Feed>().map(JSONObject: json) {
             return .success(feed)
           } else {

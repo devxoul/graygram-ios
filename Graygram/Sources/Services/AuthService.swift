@@ -27,9 +27,7 @@ struct AuthService: APIServiceType {
       .request(urlString, method: .post, parameters: parameters, headers: headers)
       .validate(statusCode: 200..<400)
       .responseJSON { response in
-        let response: DataResponse<Void> = response.flatMap { _ in
-          return .success(Void())
-        }
+        let response: DataResponse<Void> = response.mapResult { _ in }
         completion(response)
       }
   }

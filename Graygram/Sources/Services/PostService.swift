@@ -38,7 +38,7 @@ struct PostService: APIServiceType {
           request // 실제 HTTP 요청
             .validate(statusCode: 200..<400)
             .responseJSON { response in
-              let response: DataResponse<Post> = response.flatMap { json in
+              let response: DataResponse<Post> = response.flatMapResult { json in
                 if let post = Mapper<Post>().map(JSONObject: json) {
                   return .success(post)
                 } else {
@@ -69,7 +69,7 @@ struct PostService: APIServiceType {
     Alamofire.request(urlString, method: .get, headers: headers)
       .validate(statusCode: 200..<400)
       .responseJSON { response in
-        let response: DataResponse<Post> = response.flatMap { json in
+        let response: DataResponse<Post> = response.flatMapResult { json in
           if let post = Mapper<Post>().map(JSONObject: json) {
             return .success(post)
           } else {
@@ -88,9 +88,7 @@ struct PostService: APIServiceType {
     Alamofire.request(urlString, method: .post, headers: headers)
       .validate(statusCode: 200..<400)
       .responseData { response in
-        let response: DataResponse<Void> = response.flatMap { _ in
-          return .success(Void())
-        }
+        let response: DataResponse<Void> = response.mapResult { _ in }
         completion(response)
       }
   }
@@ -103,9 +101,7 @@ struct PostService: APIServiceType {
     Alamofire.request(urlString, method: .delete, headers: headers)
       .validate(statusCode: 200..<400)
       .responseData { response in
-        let response: DataResponse<Void> = response.flatMap { _ in
-          return .success(Void())
-        }
+        let response: DataResponse<Void> = response.mapResult { _ in }
         completion(response)
       }
   }

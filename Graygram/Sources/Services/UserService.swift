@@ -16,7 +16,7 @@ struct UserService: APIServiceType {
     Alamofire.request(urlString)
       .validate(statusCode: 200..<400)
       .responseJSON { response in
-        let response: DataResponse<User> = response.flatMap { json in
+        let response: DataResponse<User> = response.flatMapResult { json in
           if let user = Mapper<User>().map(JSONObject: json) {
             return .success(user)
           } else {
