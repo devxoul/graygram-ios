@@ -35,6 +35,7 @@
 		03723B3E1E4FA1EB00B07514 /* UIImageView+Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03723B3D1E4FA1EB00B07514 /* UIImageView+Photo.swift */; };
 		038F0A061E5620F700613148 /* CollectionActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038F0A051E5620F700613148 /* CollectionActivityIndicatorView.swift */; };
 		03A5C51C1E6B310200515C60 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A5C51B1E6B310200515C60 /* MainTabBarController.swift */; };
+		03AB9CBC1F03FBDB00F2B8D7 /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB9CBB1F03FBDB00F2B8D7 /* APIServiceType.swift */; };
 		03DF95251E6F0B2C00E31665 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF95241E6F0B2C00E31665 /* PostEditorViewController.swift */; };
 		03DF95271E6F1DEB00E31665 /* PostEditorImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF95261E6F1DEB00E31665 /* PostEditorImageCell.swift */; };
 		03DF95291E6F200000E31665 /* PostEditorMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DF95281E6F200000E31665 /* PostEditorMessageCell.swift */; };
@@ -74,6 +75,7 @@
 		03723B3D1E4FA1EB00B07514 /* UIImageView+Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Photo.swift"; sourceTree = "<group>"; };
 		038F0A051E5620F700613148 /* CollectionActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionActivityIndicatorView.swift; sourceTree = "<group>"; };
 		03A5C51B1E6B310200515C60 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		03AB9CBB1F03FBDB00F2B8D7 /* APIServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceType.swift; sourceTree = "<group>"; };
 		03DF95241E6F0B2C00E31665 /* PostEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		03DF95261E6F1DEB00E31665 /* PostEditorImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorImageCell.swift; sourceTree = "<group>"; };
 		03DF95281E6F200000E31665 /* PostEditorMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEditorMessageCell.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		036093F81E77E18500CB0C36 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				03AB9CBB1F03FBDB00F2B8D7 /* APIServiceType.swift */,
 				036094031E78616C00CB0C36 /* AuthService.swift */,
 				036093F91E77E25A00CB0C36 /* UserService.swift */,
 				036094051E78628B00CB0C36 /* FeedService.swift */,
@@ -403,6 +406,7 @@
 				036094081E7863DC00CB0C36 /* Paging.swift in Sources */,
 				0360940C1E78694900CB0C36 /* PostService.swift in Sources */,
 				036094101E78728300CB0C36 /* FeedViewMode.swift in Sources */,
+				03AB9CBC1F03FBDB00F2B8D7 /* APIServiceType.swift in Sources */,
 				036094061E78628B00CB0C36 /* FeedService.swift in Sources */,
 				036094021E785CC000CB0C36 /* DataResponse+MapResult.swift in Sources */,
 				036094121E7932AF00CB0C36 /* PostViewController.swift in Sources */,
