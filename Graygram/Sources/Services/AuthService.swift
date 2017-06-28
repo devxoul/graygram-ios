@@ -8,14 +8,14 @@
 
 import Alamofire
 
-struct AuthService {
+struct AuthService: APIServiceType {
 
   static func login(
     username: String,
     password: String,
     completion: @escaping (DataResponse<Void>) -> Void
   ) {
-    let urlString = "https://api.graygram.com/login/username"
+    let urlString = self.url("/login/username")
     let parameters: [String: Any] = [
       "username": username,
       "password": password,

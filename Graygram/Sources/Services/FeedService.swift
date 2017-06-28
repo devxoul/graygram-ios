@@ -9,13 +9,13 @@
 import Alamofire
 import ObjectMapper
 
-struct FeedService {
+struct FeedService: APIServiceType {
 
   static func feed(paging: Paging, completion: @escaping (DataResponse<Feed>) -> Void) {
     let urlString: String
     switch paging {
     case .refresh:
-      urlString = "https://api.graygram.com/feed"
+      urlString = self.url("/feed")
     case .next(let nextURLString):
       urlString = nextURLString
     }

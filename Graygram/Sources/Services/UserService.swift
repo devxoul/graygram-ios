@@ -9,10 +9,10 @@
 import Alamofire
 import ObjectMapper
 
-struct UserService {
+struct UserService: APIServiceType {
 
   static func me(_ completion: @escaping (DataResponse<User>) -> Void) {
-    let urlString = "https://api.graygram.com/me"
+    let urlString = self.url("/me")
     Alamofire.request(urlString)
       .validate(statusCode: 200..<400)
       .responseJSON { response in

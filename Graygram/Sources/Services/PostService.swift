@@ -9,7 +9,7 @@
 import Alamofire
 import ObjectMapper
 
-struct PostService {
+struct PostService: APIServiceType {
 
   static func create(
     image: UIImage,
@@ -17,7 +17,7 @@ struct PostService {
     progress: @escaping (Progress) -> Void,
     completion: @escaping (DataResponse<Post>) -> Void
   ) {
-    let urlString = "https://api.graygram.com/posts"
+    let urlString = self.url("/posts")
     let headers: HTTPHeaders = [
       "Accept": "application/json",
     ]
@@ -62,7 +62,7 @@ struct PostService {
   }
 
   static func post(id: Int, completion: @escaping (DataResponse<Post>) -> Void) {
-    let urlString = "https://api.graygram.com/posts/\(id)"
+    let urlString = self.url("/posts/\(id)")
     let headers: HTTPHeaders = [
       "Accept": "application/json"
     ]
@@ -81,7 +81,7 @@ struct PostService {
   }
 
   static func like(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
-    let urlString = "https://api.graygram.com/posts/\(postID)/likes"
+    let urlString = self.url("/\(postID)/likes")
     let headers: HTTPHeaders = [
       "Accept": "application/json"
     ]
@@ -96,7 +96,7 @@ struct PostService {
   }
 
   static func unlike(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
-    let urlString = "https://api.graygram.com/posts/\(postID)/likes"
+    let urlString = self.url("/\(postID)/likes")
     let headers: HTTPHeaders = [
       "Accept": "application/json"
     ]
