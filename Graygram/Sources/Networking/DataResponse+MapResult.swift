@@ -9,6 +9,9 @@
 import Alamofire
 
 extension DataResponse {
+  func mapResult<T>(_ transform: (Value) -> T) -> DataResponse<T> {
+    return self.flatMapResult { value in .success(transform(value)) }
+  }
 
   /// `Result`의 값을 가지고 만든 새로운 `Result`를 사용하는 `DataResponse`를 반환합니다.
   func flatMapResult<T>(_ transform: (Value) -> Result<T>) -> DataResponse<T> {
