@@ -81,6 +81,11 @@ struct PostService: APIServiceType {
   }
 
   static func like(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
+    NotificationCenter.default.post(
+      name: .postDidLike,
+      object: self,
+      userInfo: ["postID": postID]
+    )
     let urlString = self.url("/\(postID)/likes")
     let headers: HTTPHeaders = [
       "Accept": "application/json"
@@ -88,12 +93,24 @@ struct PostService: APIServiceType {
     Alamofire.request(urlString, method: .post, headers: headers)
       .validate(statusCode: 200..<400)
       .responseData { response in
+        if case .failure = response.result, response.response?.statusCode != 409 {
+          NotificationCenter.default.post(
+            name: .postDidUnlike,
+            object: self,
+            userInfo: ["postID": postID]
+          )
+        }
         let response: DataResponse<Void> = response.mapResult { _ in }
         completion(response)
       }
   }
 
   static func unlike(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
+    NotificationCenter.default.post(
+      name: .postDidLike,
+      object: self,
+      userInfo: ["postID": postID]
+    )
     let urlString = self.url("/\(postID)/likes")
     let headers: HTTPHeaders = [
       "Accept": "application/json"
@@ -101,6 +118,13 @@ struct PostService: APIServiceType {
     Alamofire.request(urlString, method: .delete, headers: headers)
       .validate(statusCode: 200..<400)
       .responseData { response in
+        if case .failure = response.result, response.response?.statusCode != 409 {
+          NotificationCenter.default.post(
+            name: .postDidLike,
+            object: self,
+            userInfo: ["postID": postID]
+          )
+        }
         let response: DataResponse<Void> = response.mapResult { _ in }
         completion(response)
       }

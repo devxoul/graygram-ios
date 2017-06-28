@@ -194,53 +194,12 @@ final class PostCardCell: UICollectionViewCell {
 
   func like() {
     guard let postID = self.post?.id else { return }
-    NotificationCenter.default.post(
-      name: .postDidLike,
-      object: self,
-      userInfo: ["postID": postID]
-    )
-
-    PostService.like(postID: postID) { response in
-      switch response.result {
-      case .success,
-           .failure where response.response?.statusCode != 409:
-        print("post-\(postID) 좋아요 성공!")
-
-      case .failure:
-        print("post-\(postID) 좋아요 실패 ㅠㅠ")
-        NotificationCenter.default.post(
-          name: .postDidUnlike,
-          object: self,
-          userInfo: ["postID": postID]
-        )
-      }
-    }
-
+    PostService.like(postID: postID)
   }
 
   func unlike() {
     guard let post = self.post, let postID = post.id else { return }
-    NotificationCenter.default.post(
-      name: .postDidUnlike,
-      object: self,
-      userInfo: ["postID": postID]
-    )
-
-    PostService.unlike(postID: postID) { response in
-      switch response.result {
-      case .success,
-           .failure where response.response?.statusCode != 409:
-        print("post-\(postID) 좋아요 취소 성공!")
-
-      case .failure:
-        print("post-\(postID) 좋아요 취소 실패 ㅠㅠ")
-        NotificationCenter.default.post(
-          name: .postDidLike,
-          object: self,
-          userInfo: ["postID": postID]
-        )
-      }
-    }
+    PostService.unlike(postID: postID)
   }
 
 
