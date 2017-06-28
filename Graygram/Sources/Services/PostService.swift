@@ -80,7 +80,7 @@ struct PostService: APIServiceType {
       }
   }
 
-  static func like(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
+  static func like(postID: Int, completion: ((DataResponse<Void>) -> Void)? = nil) {
     NotificationCenter.default.post(
       name: .postDidLike,
       object: self,
@@ -101,11 +101,11 @@ struct PostService: APIServiceType {
           )
         }
         let response: DataResponse<Void> = response.mapResult { _ in }
-        completion(response)
+        completion?(response)
       }
   }
 
-  static func unlike(postID: Int, completion: @escaping (DataResponse<Void>) -> Void) {
+  static func unlike(postID: Int, completion: ((DataResponse<Void>) -> Void)? = nil) {
     NotificationCenter.default.post(
       name: .postDidLike,
       object: self,
@@ -126,7 +126,7 @@ struct PostService: APIServiceType {
           )
         }
         let response: DataResponse<Void> = response.mapResult { _ in }
-        completion(response)
+        completion?(response)
       }
   }
 
