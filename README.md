@@ -2,6 +2,8 @@
 
 [40시간만에 Swift로 iOS 앱 만들기](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/) 강의에서 예제로 함께 만들어 볼 소셜 미디어 애플리케이션입니다.
 
+> ⚠️ 현재 백엔드 서버는 작동하지 않습니다. 매달 $7를 내야해서 강의중에만 켜둡니다.
+
 <img alt="graygram-1" width="600" src="https://cloud.githubusercontent.com/assets/931655/23171892/4d3fd606-f897-11e6-87e0-7230d3010c7b.png">
 
 백엔드 코드는 [graygram-web](https://github.com/devxoul/graygram-web) 레파지토리를 참고해주세요.
